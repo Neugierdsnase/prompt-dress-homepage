@@ -1,13 +1,12 @@
 <script>
 	import EmailIcon from '$lib/icons/socials/email.svelte';
-	import RssIcon from '$lib/icons/rss.svelte';
 	import MastodonIcon from '$lib/icons/socials/mastodon.svelte';
 	import RssLink from '../atoms/RssLink.svelte';
 </script>
 
 <div class="socials">
 	<a
-		href="https://mstdn.social/@promptDress"
+		href="https://mstdn.social/@promptdress"
 		target="_blank"
 		rel="me noreferrer"
 		title="Minor updates go on Mastodon"

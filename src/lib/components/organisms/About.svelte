@@ -7,12 +7,12 @@
 <section id="about">
 	<div class="info">
 		<h2>
-			This is a catchy headline that
-			<SparklingHighlight color="secondary">sparkles!</SparklingHighlight>
+			Your AI prompts are valuable.
+			<SparklingHighlight color="secondary">Cherish them.</SparklingHighlight>
 		</h2>
 		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum velit voluptatibus commodi
-			autem provident quam labore, libero beatae praesentium voluptate?
+			You spend a lot of time crafting AI prompts that get you just the right answers. Save them.
+			Organize them neatly. Reuse them with a single click.
 		</p>
 		<div class="socials">
 			<span>Socials:</span>
@@ -20,10 +20,7 @@
 		</div>
 	</div>
 	<div class="image">
-		<Image
-			src="/images/sample-image.png"
-			alt="Sample for the static template"
-		/>
+		<Image src="/images/sample-image.png" alt="Sample for the static template" />
 	</div>
 </section>
 

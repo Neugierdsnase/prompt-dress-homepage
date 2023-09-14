@@ -26,7 +26,7 @@
 	};
 
 	let sparkles: SparkleType[] = [];
-	let sparklesInterval: NodeJS.Timer;
+	let sparklesInterval: any; // it's NodeJS.Timeout, but I'm using bun now
 
 	onMount(() => {
 		sparklesInterval = setInterval(() => {

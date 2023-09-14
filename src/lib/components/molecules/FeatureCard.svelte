@@ -18,7 +18,7 @@
 		<div class="title">
 			<span>{name}</span>
 		</div>
-		<p>{description}</p>
+		<p>{@html description}</p>
 	</div>
 	<div class="footer" slot="footer">
 		{#if tags && tags.length > 0}

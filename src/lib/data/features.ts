@@ -1,43 +1,48 @@
-import type { Feature } from "$lib/utils/types";
+import type { FeatureType } from "$lib/utils/types";
 
-export default [ 
+export const Features: FeatureType[] = [
   {
-    name: 'Markdown Support',
+    name: "Free. Forever.",
     description:
-      'Blog posts are written in Markdown, a simple and nearly-universal format. This means you can bring over your posts from other platforms, and easily export to another if you want to.',
-    image: 'images/features/markdown.jpg',
-    tags: [{ label: 'Powered by MDsveX' }]
-  }, 
-  {
-    name: 'Themeable',
-    description:
-      'You can easily theme the entire website by changing just a few colors in the _themes.scss file.',
-    image: 'images/features/themeable.jpg',
-    tags: [{ label: 'Primary Color' }, { label: 'Secondary Color', color: 'secondary' }]
-  }, 
-  {
-    name: 'Extensible',
-    description:
-      'Components are built to be reused, and you can build new pages and layouts without much CSS knowledge. You can see all components in Histoire by running "npm run story:dev"',
-    image: 'images/features/extensible.jpg',
-  }, 
-  {
-    name: 'Well Optimized',
-    description:
-      'Images are automatically optimized and lazy loaded, to ensure the website loads as fast as possible regardless of connection speed.',
-    image: 'images/features/optimized.jpg',
-    tags: [{ label: 'Powered by Image Transmutation' }]
-  }, 
-  {
-    name: 'Light and Dark Modes',
-    description:
-      'This template was built with dark mode in mind. It can swap between themes automatically (based on system settings) or manually. Both themes can be tweaked in the _themes.scss file.',
-    image: 'images/features/light-dark.jpg',
+      'All features you see on this website are free and will remain so. If you want network or enterprise features, please <a href="mailto: prompt-dress@vomkonstant.in" target="_blank" /> contact me via email</a>.',
+    image: "images/features/themeable.jpg",
+    tags: [],
   },
   {
-    name: 'Open Source',
+    name: "100% Compliant",
     description:
-      'All code is open source, which means you can copy and modify it to your heart\'s content. All I ask is that you make your code open too so that knowledge can be passed on.',
-    image: 'images/features/open-source.jpg'
+      "No data gets sent anywhere from the browser extension. Everything is saved locally on your computer.",
+    image: "images/features/markdown.jpg",
+    tags: [],
   },
-] as Feature[];
+  {
+    name: "Multi-Step Priming and Prompting",
+    description:
+      'With the "shawl" feature (in active development), you can prime the model in multiple steps. Making it easier to get the model to stick to a certain schema or template.',
+    image: "images/features/extensible.jpg",
+    tags: [{ label: "Coming Soon" }],
+  },
+  {
+    name: "Dynamic values",
+    description:
+      'No more manually searching for words or phrases you need to adjust for the occasion. The "Corsages" feature allows you to dynamically change values in the prompt before feeding it to the model.',
+    image: "images/features/optimized.jpg",
+    tags: [],
+  },
+  {
+    name: "Tags and Filters",
+    description:
+      "Organize your prompts in a straightforward manner, not more sifting through folders and text files.",
+    image: "images/features/light-dark.jpg",
+    tags: [{ label: "Coming Soon" }],
+  },
+  {
+    name: "Versioning",
+    description:
+      "Do you want to iterate over an old version of your prompt because it stopped working, but you don't want to delete it. No problem, just use the versioning feature (actively being developed).",
+    image: "images/features/open-source.jpg",
+    tags: [{ label: "Next on the Roadmap", color: "secondary" }],
+  },
+];
+
+export default Features;

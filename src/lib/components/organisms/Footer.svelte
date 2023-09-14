@@ -8,6 +8,9 @@
 		<FooterWave />
 	</div>
 	<div class="content">
+		<div class="socials">
+			<Socials />
+		</div>
 		<div class="copyright">
 			This website was built by <a
 				href="https://blog.vomkonstant.in"
@@ -27,9 +30,6 @@
 			>. Icons by
 			<a href="https://iconoir.com/" target="_blank" rel="noopener noreferrer">Iconoir</a>.
 		</div>
-		<div class="socials">
-			<Socials />
-		</div>
 	</div>
 </footer>
 
@@ -47,7 +47,8 @@
 			align-items: center;
 			justify-content: center;
 			gap: 15px;
-			font-weight: 600;
+			font-weight: 400;
+			font-size: 0.8rem;
 			text-align: center;
 
 			.credits {

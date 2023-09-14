@@ -73,12 +73,12 @@
 	}
 
 	.note {
-		font-size: 0.8rem;
+		font-size: 0.7rem;
 		color: rgba(var(--color--text-rgb), 0.8);
 	}
 
 	.text {
-		margin-top: 5px;
+		margin-top: 10px;
 		font-size: 0.9rem;
 		text-align: justify;
 	}

@@ -1,26 +1,27 @@
 <script>
-	import FeaturesIcon from '$lib/icons/features.svelte';
-	import GitHubIcon from '$lib/icons/socials/github.svelte';
+	import LearningIcon from '$lib/icons/learning.svelte';
+	import DownloadIcon from '$lib/icons/download.svelte';
 	import Button from '$lib/components/atoms/Button.svelte';
 	import Sparkles from '../atoms/Sparkles.svelte';
 </script>
 
 <section id="hero">
-	<h1 class="hello">This is a SvelteKit Static Blog Template!</h1>
+	<Sparkles>
+		<h1 class="hello">Prompt Dress</h1>
+	</Sparkles>
 	<p class="intro">
-		<span class="left">It supports Markdown,</span>
-		<span class="right">and is really fast.</span>
+		<span class="center">Organize your AI prompts<br />with ease and joy.</span>
 	</p>
 	<div class="ctas">
-		<Sparkles>
-			<Button href="https://github.com/matfantinel/sveltekit-static-blog-template">
-				<GitHubIcon slot="icon" />
-				Source Code
-			</Button>
-		</Sparkles>
-		<Button color="primary" href="https://histoire-sveltekit-static-blog-template.vercel.app/">
-			<FeaturesIcon slot="icon" />
-			Components
+		<Button
+			href="https://chrome.google.com/webstore/detail/prompt-dress/mpcinhhegdohpapgmiopjlfhemhhfmid"
+		>
+			<DownloadIcon slot="icon" />
+			Download for Chrome
+		</Button>
+		<Button color="primary" href="/blog">
+			<LearningIcon slot="icon" />
+			Learn about AI prompting
 		</Button>
 	</div>
 </section>
@@ -52,11 +53,8 @@
 			display: flex;
 			flex-direction: column;
 
-			.left {
-				text-align: left;
-			}
-			.right {
-				text-align: right;
+			.center {
+				text-align: center;
 			}
 
 			@include for-phone-only {
