@@ -36,7 +36,7 @@
 			// Clean up any "expired" sparkles
 			const nextSparkles = sparkles.filter((sparkle) => {
 				const delta = now - sparkle.createdAt;
-				return delta < 1500;
+				return delta < 2500;
 			});
 			// Include our new sparkle
 			nextSparkles.push(sparkle);
@@ -51,7 +51,7 @@
 
 <div class="sparkle-wrapper">
 	{#each sparkles as sparkle (sparkle.id)}
-		<Sparkle color={sparkle.color} size={sparkle.size} style={sparkle.style} />
+		<Sparkle color={sparkle.color} size={String(sparkle.size)} offset={sparkle.style} />
 	{/each}
 	<span class="slot-wrapper">
 		<slot />

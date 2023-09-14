@@ -1,8 +1,6 @@
 <script>
 	import FooterWave from '$lib/icons/footer-wave.svelte';
 	import Socials from '$lib/components/molecules/Socials.svelte';
-	import ThemeToggle from '$lib/components/molecules/ThemeToggle.svelte';
-	import RssLink from '$lib/components/atoms/RssLink.svelte';
 </script>
 
 <footer>
@@ -11,7 +9,13 @@
 	</div>
 	<div class="content">
 		<div class="copyright">
-			This template was built by <a
+			This website was built by <a
+				href="https://blog.vomkonstant.in"
+				target="_blank"
+				rel="noopener noreferrer">Konstantin Kovar</a
+			>
+			based on a truly amazing template by
+			<a
 				href="https://fantinel.dev?utm_source=site-template"
 				target="_blank"
 				rel="noopener noreferrer">Matheus Fantinel</a
@@ -25,8 +29,6 @@
 		</div>
 		<div class="socials">
 			<Socials />
-			<RssLink />
-			<ThemeToggle />
 		</div>
 	</div>
 </footer>
