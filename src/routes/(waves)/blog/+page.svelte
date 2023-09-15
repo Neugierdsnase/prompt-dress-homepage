@@ -1,10 +1,10 @@
 <script lang="ts">
 	import BlogPostCard from '$lib/components/molecules/BlogPostCard.svelte';
 	import ContentSection from '$lib/components/organisms/ContentSection.svelte';
-	import type { BlogPost } from '$lib/utils/types';
+	import type { BlogPostType } from '$lib/utils/types';
 
 	export let data: {
-		posts: BlogPost[];
+		posts: BlogPostType[];
 	};
 
 	let { posts } = data;

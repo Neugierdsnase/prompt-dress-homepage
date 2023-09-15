@@ -1,15 +1,12 @@
 <script lang="ts">
-	import type { BlogPost } from '$lib/utils/types';
+	import type { BlogPostType } from '$lib/utils/types';
 	import BlogPostCard from '$lib/components/molecules/BlogPostCard.svelte';
 	import ContentSection from '$lib/components/organisms/ContentSection.svelte';
 
-	export let posts: BlogPost[];
+	export let posts: BlogPostType[];
 </script>
 
-<ContentSection
-	id="related-posts"
-	title="Related Posts"
->
+<ContentSection id="related-posts" title="Related Posts">
 	<div class="simple-grid">
 		{#each posts as post}
 			<BlogPostCard

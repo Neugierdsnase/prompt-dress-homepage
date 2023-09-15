@@ -1,48 +1,47 @@
-import type { SocialProofType } from "$lib/utils/types";
+import type { SocialProofType } from '$lib/utils/types';
 
-export const SocialProof: SocialProofType[] = [
+export const socialProofs: SocialProofType[] = [
   {
-    name: "Matthew Ziebarth",
-    position: "CTO, Ada Power Woman",
+    name: 'Matthew Ziebarth',
+    position: 'CTO and Cofounder, Ada Power Woman',
     quote:
-      "Blog posts are written in Markdown, a simple and nearly-universal format. This means you can bring over your posts from other platforms, and easily export to another if you want to.",
-    image: "images/features/markdown.jpg",
+      'Prompt Dress completely solved my issues with saving and organizing my prompts in text files.',
+    image: 'images/social-proof/matthew.jpg'
   },
   {
-    name: "Andreas Ebner",
-    position: "Partner, Immobiliaris",
+    name: 'Andreas Ebner',
+    position: 'Partner, Immobiliaris',
     quote:
-      "You can easily theme the entire website by changing just a few colors in the _themes.scss file.",
-    image: "images/features/themeable.jpg",
+      'With Prompt Dress I created and maintained powerful prompts for writing ad texts, and I always have them ready in my browser.',
+    image: 'images/social-proof/andi.jpg'
   },
   {
-    name: "Heorhii Iforgot",
-    position: "devOps Engineer, Seatti",
-    quote:
-      'Components are built to be reused, and you can build new pages and layouts without much CSS knowledge. You can see all components in Histoire by running "npm run story:dev"',
-    image: "images/features/extensible.jpg",
+    name: 'Heorhii Teryaev',
+    position: 'devOps Engineer, Seatti',
+    quote: "It's where I keep all my prompts. It has everything I need while not being in the way.",
+    image: 'images/social-proof/gosha.jpg'
   },
   {
-    name: "Edda Bueltemayer",
-    position: "Software Engineer, Firma",
+    name: 'Edda Bueltemayer',
+    position: 'Software Engineer',
     quote:
-      "Images are automatically optimized and lazy loaded, to ensure the website loads as fast as possible regardless of connection speed.",
-    image: "images/features/optimized.jpg",
+      'I only have one prompt, which I use for code reviews, but thanks to the Corsages feature, this is all I need. Before I use my prompt, I can easily change the programming language and frameworks.',
+    image: 'images/features/optimized.jpg'
   },
   {
-    name: "Alexandra Kim",
-    position: "Founder and CEO, mebloom",
+    name: 'Alexandra Kim',
+    position: 'Founder and CEO, mebloom',
     quote:
-      "This template was built with dark mode in mind. It can swap between themes automatically (based on system settings) or manually. Both themes can be tweaked in the _themes.scss file.",
-    image: "images/features/light-dark.jpg",
+      'It takes a bit of convincing and fine-tuning before we get the tone for our copies just right. Using Prompt Dress, we never have to look far for the prompts we know are working.',
+    image: 'images/social-proof/sasha.jpg'
   },
   {
-    name: "GPT-4",
-    position: "LLM, OpenAI",
+    name: 'GPT-4',
+    position: 'LLM, OpenAI',
     quote:
-      "Absolutely, crafting a quote that conveys social proof for your web app can help build trust and demonstrate value to prospective users. Here are a few general quotes that you might find useful...",
-    image: "images/features/open-source.jpg",
-  },
+      'Absolutely, crafting a quote that conveys social proof for your web app can help build trust and demonstrate value to prospective users. Here are a few general quotes that you might find useful...',
+    image: 'images/social-proof/chatgpt.png'
+  }
 ];
 
-export default SocialProof;
+export default socialProofs;

@@ -1,7 +1,8 @@
-import { description, siteBaseUrl, title } from '$lib/data/meta';
-import type { BlogPost } from '$lib/utils/types';
-import dateformat from 'dateformat';
-import { filterPosts, importPosts } from '$lib/data/blog-posts/utils';
+import { description, siteBaseUrl, title } from "$lib/data/meta";
+import { BlogPostType } from "$lib/utils/types";
+import dateformat from "dateformat";
+import { filterPosts, importPosts } from "$lib/data/blog-posts/utils";
+import { TagType } from "../../lib/utils/types.ts";
 
 export const prerender = true;
 
@@ -11,13 +12,13 @@ export async function GET() {
 
   const body = xml(filteredPosts);
   const headers = {
-    'Cache-Control': 'max-age=0, s-maxage=3600',
-    'Content-Type': 'application/xml'
+    "Cache-Control": "max-age=0, s-maxage=3600",
+    "Content-Type": "application/xml",
   };
   return new Response(body, { headers });
 }
 
-const xml = (posts: BlogPost[]) => `
+const xml = (posts: BlogPostType[]) => `
 <rss version="2.0"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
 	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
@@ -48,8 +49,14 @@ const xml = (posts: BlogPost[]) => `
           <title>${post.title}</title>
           <description>${post.excerpt}</description>
           <link>${siteBaseUrl}/${post.slug}</link>
-          <pubDate>${dateformat(post.date, 'ddd, dd mmm yyyy HH:MM:ss o')}</pubDate>
-          ${post.tags ? post.tags.map((tag) => `<category>${tag}</category>`).join('') : ''}
+          <pubDate>${dateformat(post.date, "ddd, dd mmm yyyy HH:MM:ss o")
+        }</pubDate>
+          ${post.tags
+          ? post.tags.map((tag: TagType) => `<category>${tag}</category>`).join(
+            "",
+          )
+          : ""
+        }
           <content:encoded><![CDATA[
             <div style="margin: 50px 0; font-style: italic;">
               If anything looks wrong, 
@@ -62,11 +69,19 @@ const xml = (posts: BlogPost[]) => `
 
             ${post.html}
           ]]></content:encoded>
-          ${post.coverImage ? `<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="${siteBaseUrl}/${post.coverImage}"/>` : ''}
-          ${post.coverImage ? `<media:content xmlns:media="http://search.yahoo.com/mrss/" medium="image" url="${siteBaseUrl}/${post.coverImage}"/>` : ''}          
+          ${post.coverImage
+          ? `<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="${siteBaseUrl}/${post.coverImage}"/>`
+          : ""
+        }
+          ${post.coverImage
+          ? `<media:content xmlns:media="http://search.yahoo.com/mrss/" medium="image" url="${siteBaseUrl}/${post.coverImage}"/>`
+          : ""
+        }          
         </item>
-      `
+      `,
     )
-    .join('')}
+    .join("")
+  }
   </channel>
 </rss>`;
+

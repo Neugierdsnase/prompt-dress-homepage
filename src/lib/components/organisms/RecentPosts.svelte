@@ -1,34 +1,36 @@
 <script lang="ts">
 	import BlogPostCard from '$lib/components/molecules/BlogPostCard.svelte';
 	import ContentSection from '$lib/components/organisms/ContentSection.svelte';
-	import type { BlogPost } from '$lib/utils/types';
+	import type { BlogPostType } from '$lib/utils/types';
 	import Button from '$lib/components/atoms/Button.svelte';
 
-	export let posts: BlogPost[];
+	export let posts: BlogPostType[];
 </script>
 
-<ContentSection
-	id="recent-posts"
-	title="Prompt Engineering"
-	description="Learn more about how to write prompts that get you the best results with these blog posts."
-	align="left"
->
-	<div slot="button">
-		<Button href="/blog">View More</Button>
-	</div>
-	<div class="grid">
-		{#each posts as post}
-			<BlogPostCard
-				slug={post.slug}
-				title={post.title}
-				excerpt={post.excerpt}
-				tags={post.tags}
-				readingTime={post.readingTime}
-				showImage={false}
-			/>
-		{/each}
-	</div>
-</ContentSection>
+<div class="wrapper">
+	<ContentSection
+		id="recent-posts"
+		title="Prompt Engineering"
+		description="Learn more about how to write prompts that get you the best results with these blog posts."
+		align="left"
+	>
+		<div slot="button">
+			<Button href="/blog">View More</Button>
+		</div>
+		<div class="grid">
+			{#each posts as post}
+				<BlogPostCard
+					slug={post.slug}
+					title={post.title}
+					excerpt={post.excerpt}
+					tags={post.tags}
+					readingTime={post.readingTime}
+					showImage={false}
+				/>
+			{/each}
+		</div>
+	</ContentSection>
+</div>
 
 <style lang="scss">
 	@import '$lib/scss/breakpoints.scss';
@@ -42,5 +44,11 @@
 		@include for-phone-only {
 			grid-template-columns: 1fr;
 		}
+	}
+
+	.wrapper {
+		margin: 0px -100vw;
+		padding: 0px 100vw;
+		background-color: var(--color--post-page-background);
 	}
 </style>

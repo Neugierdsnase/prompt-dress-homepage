@@ -9,6 +9,7 @@
 	export let Hst: Hst;
 
 	let props: NoUndefinedField<ComponentProps<Button>> = {
+		additionalClass: '',
 		color: 'primary',
 		style: 'solid',
 		size: 'medium',

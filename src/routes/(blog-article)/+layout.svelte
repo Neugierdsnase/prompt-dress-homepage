@@ -5,11 +5,11 @@
 	import dateformat from 'dateformat';
 
 	import { keywords, siteBaseUrl, title } from '$lib/data/meta';
-	import type { BlogPost } from '$lib/utils/types';
+	import type { BlogPostType } from '$lib/utils/types';
 	import RelatedPosts from '$lib/components/organisms/RelatedPosts.svelte';
 	import Image from '$lib/components/atoms/Image.svelte';
 
-	export let data: { post: BlogPost };
+	export let data: { post: BlogPostType };
 	$: ({ post } = data);
 
 	let metaKeywords = keywords;
@@ -145,13 +145,6 @@
 			max-height: 400px;
 			box-shadow: var(--image-shadow);
 			border-radius: 6px;
-
-			img {
-				width: 100%;
-				height: 100%;
-				max-height: 400px;
-				object-fit: cover;
-			}
 		}
 
 		:global(.cover-image img) {
