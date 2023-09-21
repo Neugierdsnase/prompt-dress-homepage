@@ -7,6 +7,7 @@ import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 const extensions = ['.svelte', '.md'];
+const dev = undefined;
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
