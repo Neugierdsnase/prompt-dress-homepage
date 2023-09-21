@@ -64,7 +64,6 @@ declare module '$env/static/private' {
 	export const HOME: string;
 	export const LC_PAPER: string;
 	export const LANG: string;
-	export const LS_COLORS: string;
 	export const XDG_CURRENT_DESKTOP: string;
 	export const KONSOLE_DBUS_SERVICE: string;
 	export const npm_package_version: string;
@@ -192,7 +191,6 @@ declare module '$env/dynamic/private' {
 		HOME: string;
 		LC_PAPER: string;
 		LANG: string;
-		LS_COLORS: string;
 		XDG_CURRENT_DESKTOP: string;
 		KONSOLE_DBUS_SERVICE: string;
 		npm_package_version: string;

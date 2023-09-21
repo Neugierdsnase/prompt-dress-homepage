@@ -11,27 +11,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: yarn
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
 
       - name: Install dependencies
-        run: yarn
+        run: bun install
 
       - name: build
         env:
           BASE_PATH: '/prompt-dress-homepage'
         run: |
-          npm run build
+          bun run build
           touch build/.nojekyll
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v1
         with:
           # this should match the `pages` option in your adapter-static options
-          path: 'build/'
+          path: 'build'
 
   deploy:
     needs: build_site
