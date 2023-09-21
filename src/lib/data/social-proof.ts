@@ -3,7 +3,8 @@ import type { SocialProofType } from '$lib/utils/types';
 export const socialProofs: SocialProofType[] = [
   {
     name: 'Matthew Ziebarth',
-    position: 'CTO and Cofounder, Ada Power Woman',
+    position:
+      'CTO and Cofounder, <a href="https://adaapp.com" target="_blank" rel="nofollow noopener">Ada Growth</a>',
     quote:
       'Prompt Dress completely solved my issues with saving and organizing my prompts in text files.',
     image: 'images/social-proof/matthew.jpg'
@@ -22,22 +23,17 @@ export const socialProofs: SocialProofType[] = [
     image: 'images/social-proof/gosha.jpg'
   },
   {
-    name: 'Edda Bueltemayer',
-    position: 'Software Engineer',
-    quote:
-      'I only have one prompt, which I use for code reviews, but thanks to the Corsages feature, this is all I need. Before I use my prompt, I can easily change the programming language and frameworks.',
-    image: 'images/features/optimized.jpg'
-  },
-  {
     name: 'Alexandra Kim',
-    position: 'Founder and CEO, mebloom',
+    position:
+      'Founder and CEO, <a href="https://www.themebloom.com/" target="_blank" rel="nofollow noopener">MeBloom</a>',
     quote:
       'It takes a bit of convincing and fine-tuning before we get the tone for our copies just right. Using Prompt Dress, we never have to look far for the prompts we know are working.',
     image: 'images/social-proof/sasha.jpg'
   },
   {
     name: 'GPT-4',
-    position: 'LLM, OpenAI',
+    position:
+      'LLM, <a href="https://openai.com/" target="_blank" rel="nofollow noopener">OpenAI</a>',
     quote:
       'Absolutely, crafting a quote that conveys social proof for your web app can help build trust and demonstrate value to prospective users. Here are a few general quotes that you might find useful...',
     image: 'images/social-proof/chatgpt.png'

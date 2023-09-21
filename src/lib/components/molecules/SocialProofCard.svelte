@@ -23,7 +23,7 @@
 				{name}
 			</p>
 			<p class="position">
-				{position}
+				{@html position}
 			</p>
 		</div>
 	</div>
