@@ -2,20 +2,23 @@
 // So they can be added as suffixes on different pages
 // Via <svelte:head>
 
-export const siteBaseUrl = 'https://sveltekit-static-blog-template.vercel.app/';
+export const siteBaseUrl = 'https://promptdress.com';
 
 export const keywords = [
-	'Svelte',
-	'SvelteKit',
-	'Template',
-	'Blog',
-	'Starter',
-	'Static Site'
+	'Generative AI',
+	'Prompt Engineering',
+	'Prompting',
+	'Browser Extension',
+	'ChatGPT',
+	'LLM',
+	'Large Language Model',
+	'GPT-3',
+	'GPT-4',
+	'Chrome Extension'
 ];
 
-export const description =
-	"A light, neat, and easy-to-use SvelteKit template for your next website.";
+export const description = 'The only tool you need to organize and save your AI prompts.';
 
-export const title = 'SvelteKit Static Blog Template';
+export const title = 'Prompt Dress';
 
 export const image = `${siteBaseUrl}/images/site-preview.png`;

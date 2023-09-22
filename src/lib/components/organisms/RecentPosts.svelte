@@ -10,8 +10,8 @@
 <div class="wrapper">
 	<ContentSection
 		id="recent-posts"
-		title="Prompt Engineering"
-		description="Learn more about how to write prompts that get you the best results with these blog posts."
+		title="Learn about Prompt Engineering"
+		description="Unlock the full potential of AI with some proven techniques and best practices."
 		align="left"
 	>
 		<div slot="button">

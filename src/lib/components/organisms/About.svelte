@@ -19,9 +19,15 @@
 			<Socials />
 		</div>
 	</div>
-	<div class="image">
-		<Image src="/images/sample-image.png" alt="Sample for the static template" />
-	</div>
+	<a
+		href="https://chrome.google.com/webstore/detail/prompt-dress/mpcinhhegdohpapgmiopjlfhemhhfmid"
+		rel="noopener"
+		target="_blank"
+	>
+		<div class="image">
+			<Image src="/logos/logo_large.png" alt="Sample for the static template" />
+		</div>
+	</a>
 </section>
 
 <style lang="scss">

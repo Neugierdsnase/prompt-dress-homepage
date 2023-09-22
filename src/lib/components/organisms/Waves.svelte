@@ -40,7 +40,11 @@
 <style lang="scss">
 	@import '$lib/scss/_breakpoints.scss';
 	.waves-container {
-		background: linear-gradient(60deg, var(--color--waves-start) 0%, var(--color--waves-end) 100%);
+		background: url(/images/cyberpunk/pattern2.png),
+			linear-gradient(60deg, var(--color--waves-start) 0%, var(--color--waves-end) 100%);
+		mix-blend-mode: lighten;
+		background-repeat: no-repeat;
+		background-size: cover;
 		position: absolute;
 		width: 100%;
 		height: min(65vh, 500px);

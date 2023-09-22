@@ -1,19 +1,24 @@
 {
-	"name": "SvelteKit Static Blog Template",
-	"short_name": "SvelteKit Template",
+	"name": "Prompt Dress Browser Extension",
+	"short_name": "Prompt Dress",
 	"icons": [
 		{
-			"src": "/favicons/android-chrome-192x192.png",
-			"sizes": "192x192",
+			"src": "/favicons/icon48.png",
+			"sizes": "48x48",
 			"type": "image/png"
 		},
 		{
-			"src": "/favicons/android-chrome-512x512.png",
-			"sizes": "512x512",
+			"src": "/favicons/icon16.png",
+			"sizes": "16x16",
+			"type": "image/png"
+		},
+		{
+			"src": "/favicons/icon128.png",
+			"sizes": "128x128",
 			"type": "image/png"
 		}
 	],
-	"theme_color": "#f9f6fe",
-	"background_color": "#f9f6fe",
+	"theme_color": "#f500ff",
+	"background_color": "#1B1D21",
 	"display": "standalone"
 }
