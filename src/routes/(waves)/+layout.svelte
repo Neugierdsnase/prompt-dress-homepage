@@ -17,12 +17,6 @@
 	<meta property="og:title" content={title} />
 
 	<meta property="og:image" content={image} />
-
-	<script
-		src="https://cdn.counter.dev/script.js"
-		data-id="6a4de5fb-ea58-4802-8c2c-9c41d9ca7bad"
-		data-utcoffset="2"
-	></script>
 </svelte:head>
 
 <Waves />
