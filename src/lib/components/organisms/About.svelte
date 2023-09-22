@@ -25,7 +25,7 @@
 		target="_blank"
 	>
 		<div class="image">
-			<Image src="/logos/logo_large.png" alt="Sample for the static template" />
+			<Image src="/images/logos/logo_large.png" alt="Sample for the static template" />
 		</div>
 	</a>
 </section>

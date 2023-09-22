@@ -36,7 +36,7 @@
 			// Clean up any "expired" sparkles
 			const nextSparkles = sparkles.filter((sparkle) => {
 				const delta = now - sparkle.createdAt;
-				return delta < 2500;
+				return delta < 1500;
 			});
 			// Include our new sparkle
 			nextSparkles.push(sparkle);

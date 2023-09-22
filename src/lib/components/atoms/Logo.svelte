@@ -4,7 +4,7 @@
 </script>
 
 <div class="logo" class:animated>
-	<Image src="/logos/icon48.png" alt="Sample for the static template" />
+	<Image src="/images/logos/icon48.png" alt="Prompt Dress Logo" />
 </div>
 
 <style lang="scss">

@@ -29,11 +29,11 @@
 <style lang="scss">
 	.wrapper {
 		position: absolute;
-		pointer-events: none;
 		display: flex;
+		pointer-events: none;
 		z-index: 2;
 		filter: blur(2px);
-		animation: grow-and-shrink 1400ms ease-in-out forwards;
+		animation: grow-and-shrink 1500ms ease-in-out forwards;
 	}
 
 	@keyframes grow-and-shrink {
