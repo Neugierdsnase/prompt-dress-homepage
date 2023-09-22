@@ -30,6 +30,10 @@
 		"src/routes/(blog-article)/+layout.server.ts",
 		"src/routes/+layout.ts"
 	],
+	"/(blog-article)/prompt-engineering-basics": [
+		"src/routes/(blog-article)/+layout.server.ts",
+		"src/routes/+layout.ts"
+	],
 	"/rss.xml": [
 		"src/routes/rss.xml/+server.ts"
 	]
