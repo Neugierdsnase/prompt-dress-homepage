@@ -5,7 +5,7 @@
 /// <reference types="@sveltejs/kit" />
 
 /**
- * Environment variables [loaded by Vite](https://vitejs.dev/guide/env-and-mode.html#env-files) from `.env` files and `process.env`. Like [`$env/dynamic/private`](https://kit.svelte.dev/docs/modules#$env-dynamic-private), this module cannot be imported into client-side code. This module only includes variables that _do not_ begin with [`config.kit.env.publicPrefix`](https://kit.svelte.dev/docs/configuration#env).
+ * Environment variables [loaded by Vite](https://vitejs.dev/guide/env-and-mode.html#env-files) from `.env` files and `process.env`. Like [`$env/dynamic/private`](https://kit.svelte.dev/docs/modules#$env-dynamic-private), this module cannot be imported into client-side code. This module only includes variables that _do not_ begin with [`config.kit.env.publicPrefix`](https://kit.svelte.dev/docs/configuration#env) _and do_ start with [`config.kit.env.privatePrefix`](https://kit.svelte.dev/docs/configuration#env) (if configured).
  * 
  * _Unlike_ [`$env/dynamic/private`](https://kit.svelte.dev/docs/modules#$env-dynamic-private), the values exported from this module are statically injected into your bundle at build time, enabling optimisations like dead code elimination.
  * 
@@ -27,11 +27,14 @@
  */
 declare module '$env/static/private' {
 	export const SHELL: string;
+	export const npm_command: string;
 	export const SESSION_MANAGER: string;
 	export const WINDOWID: string;
+	export const npm_config_userconfig: string;
 	export const QT_SCREEN_SCALE_FACTORS: string;
 	export const COLORTERM: string;
 	export const XDG_CONFIG_DIRS: string;
+	export const npm_config_cache: string;
 	export const XDG_SESSION_PATH: string;
 	export const NVM_INC: string;
 	export const TERM_PROGRAM_VERSION: string;
@@ -43,28 +46,31 @@ declare module '$env/static/private' {
 	export const SHELL_SESSION_ID: string;
 	export const MEMORY_PRESSURE_WRITE: string;
 	export const TMUX_PLUGIN_MANAGER_PATH: string;
+	export const COLOR: string;
 	export const npm_config_local_prefix: string;
 	export const HOMEBREW_PREFIX: string;
 	export const DESKTOP_SESSION: string;
 	export const LC_MONETARY: string;
 	export const GTK_RC_FILES: string;
+	export const npm_config_globalconfig: string;
 	export const XCURSOR_SIZE: string;
 	export const EDITOR: string;
 	export const GTK_MODULES: string;
 	export const XDG_SEAT: string;
 	export const PWD: string;
-	export const XDG_SESSION_DESKTOP: string;
 	export const LOGNAME: string;
+	export const XDG_SESSION_DESKTOP: string;
 	export const XDG_SESSION_TYPE: string;
 	export const MANPATH: string;
+	export const npm_config_init_module: string;
 	export const SYSTEMD_EXEC_PID: string;
 	export const OMF_PATH: string;
 	export const XAUTHORITY: string;
 	export const MOTD_SHOWN: string;
 	export const GTK2_RC_FILES: string;
 	export const HOME: string;
-	export const LC_PAPER: string;
 	export const LANG: string;
+	export const LC_PAPER: string;
 	export const XDG_CURRENT_DESKTOP: string;
 	export const KONSOLE_DBUS_SERVICE: string;
 	export const npm_package_version: string;
@@ -76,14 +82,17 @@ declare module '$env/static/private' {
 	export const INVOCATION_ID: string;
 	export const KONSOLE_VERSION: string;
 	export const MANAGERPID: string;
+	export const INIT_CWD: string;
 	export const STARSHIP_SESSION_KEY: string;
 	export const KDE_SESSION_UID: string;
 	export const INFOPATH: string;
+	export const npm_lifecycle_script: string;
 	export const NVM_DIR: string;
 	export const XDG_SESSION_CLASS: string;
 	export const LC_IDENTIFICATION: string;
 	export const TERM: string;
 	export const npm_package_name: string;
+	export const npm_config_prefix: string;
 	export const USER: string;
 	export const TMUX_PANE: string;
 	export const COLORFGBG: string;
@@ -104,22 +113,27 @@ declare module '$env/static/private' {
 	export const npm_execpath: string;
 	export const XDG_RUNTIME_DIR: string;
 	export const DEBUGINFOD_URLS: string;
-	export const LC_TIME: string;
 	export const npm_package_json: string;
+	export const LC_TIME: string;
 	export const QT_AUTO_SCREEN_SCALE_FACTOR: string;
 	export const JOURNAL_STREAM: string;
 	export const XCURSOR_THEME: string;
 	export const GTK3_MODULES: string;
 	export const XDG_DATA_DIRS: string;
 	export const KDE_FULL_SESSION: string;
+	export const npm_config_noproxy: string;
 	export const PATH: string;
+	export const npm_config_metrics_registry: string;
+	export const npm_config_node_gyp: string;
 	export const DBUS_SESSION_BUS_ADDRESS: string;
+	export const npm_config_global_prefix: string;
 	export const KDE_APPLICATIONS_AS_SCOPE: string;
 	export const tmux_version: string;
 	export const MAIL: string;
 	export const NVM_BIN: string;
 	export const OMF_CONFIG: string;
 	export const npm_node_execpath: string;
+	export const npm_config_engine_strict: string;
 	export const LC_NUMERIC: string;
 	export const TERM_PROGRAM: string;
 	export const KONSOLE_DBUS_WINDOW: string;
@@ -141,7 +155,7 @@ declare module '$env/static/public' {
 }
 
 /**
- * This module provides access to runtime environment variables, as defined by the platform you're running on. For example if you're using [`adapter-node`](https://github.com/sveltejs/kit/tree/master/packages/adapter-node) (or running [`vite preview`](https://kit.svelte.dev/docs/cli)), this is equivalent to `process.env`. This module only includes variables that _do not_ begin with [`config.kit.env.publicPrefix`](https://kit.svelte.dev/docs/configuration#env).
+ * This module provides access to runtime environment variables, as defined by the platform you're running on. For example if you're using [`adapter-node`](https://github.com/sveltejs/kit/tree/master/packages/adapter-node) (or running [`vite preview`](https://kit.svelte.dev/docs/cli)), this is equivalent to `process.env`. This module only includes variables that _do not_ begin with [`config.kit.env.publicPrefix`](https://kit.svelte.dev/docs/configuration#env) _and do_ start with [`config.kit.env.privatePrefix`](https://kit.svelte.dev/docs/configuration#env) (if configured).
  * 
  * This module cannot be imported into client-side code.
  * 
@@ -155,11 +169,14 @@ declare module '$env/static/public' {
 declare module '$env/dynamic/private' {
 	export const env: {
 		SHELL: string;
+		npm_command: string;
 		SESSION_MANAGER: string;
 		WINDOWID: string;
+		npm_config_userconfig: string;
 		QT_SCREEN_SCALE_FACTORS: string;
 		COLORTERM: string;
 		XDG_CONFIG_DIRS: string;
+		npm_config_cache: string;
 		XDG_SESSION_PATH: string;
 		NVM_INC: string;
 		TERM_PROGRAM_VERSION: string;
@@ -171,28 +188,31 @@ declare module '$env/dynamic/private' {
 		SHELL_SESSION_ID: string;
 		MEMORY_PRESSURE_WRITE: string;
 		TMUX_PLUGIN_MANAGER_PATH: string;
+		COLOR: string;
 		npm_config_local_prefix: string;
 		HOMEBREW_PREFIX: string;
 		DESKTOP_SESSION: string;
 		LC_MONETARY: string;
 		GTK_RC_FILES: string;
+		npm_config_globalconfig: string;
 		XCURSOR_SIZE: string;
 		EDITOR: string;
 		GTK_MODULES: string;
 		XDG_SEAT: string;
 		PWD: string;
-		XDG_SESSION_DESKTOP: string;
 		LOGNAME: string;
+		XDG_SESSION_DESKTOP: string;
 		XDG_SESSION_TYPE: string;
 		MANPATH: string;
+		npm_config_init_module: string;
 		SYSTEMD_EXEC_PID: string;
 		OMF_PATH: string;
 		XAUTHORITY: string;
 		MOTD_SHOWN: string;
 		GTK2_RC_FILES: string;
 		HOME: string;
-		LC_PAPER: string;
 		LANG: string;
+		LC_PAPER: string;
 		XDG_CURRENT_DESKTOP: string;
 		KONSOLE_DBUS_SERVICE: string;
 		npm_package_version: string;
@@ -204,14 +224,17 @@ declare module '$env/dynamic/private' {
 		INVOCATION_ID: string;
 		KONSOLE_VERSION: string;
 		MANAGERPID: string;
+		INIT_CWD: string;
 		STARSHIP_SESSION_KEY: string;
 		KDE_SESSION_UID: string;
 		INFOPATH: string;
+		npm_lifecycle_script: string;
 		NVM_DIR: string;
 		XDG_SESSION_CLASS: string;
 		LC_IDENTIFICATION: string;
 		TERM: string;
 		npm_package_name: string;
+		npm_config_prefix: string;
 		USER: string;
 		TMUX_PANE: string;
 		COLORFGBG: string;
@@ -232,29 +255,34 @@ declare module '$env/dynamic/private' {
 		npm_execpath: string;
 		XDG_RUNTIME_DIR: string;
 		DEBUGINFOD_URLS: string;
-		LC_TIME: string;
 		npm_package_json: string;
+		LC_TIME: string;
 		QT_AUTO_SCREEN_SCALE_FACTOR: string;
 		JOURNAL_STREAM: string;
 		XCURSOR_THEME: string;
 		GTK3_MODULES: string;
 		XDG_DATA_DIRS: string;
 		KDE_FULL_SESSION: string;
+		npm_config_noproxy: string;
 		PATH: string;
+		npm_config_metrics_registry: string;
+		npm_config_node_gyp: string;
 		DBUS_SESSION_BUS_ADDRESS: string;
+		npm_config_global_prefix: string;
 		KDE_APPLICATIONS_AS_SCOPE: string;
 		tmux_version: string;
 		MAIL: string;
 		NVM_BIN: string;
 		OMF_CONFIG: string;
 		npm_node_execpath: string;
+		npm_config_engine_strict: string;
 		LC_NUMERIC: string;
 		TERM_PROGRAM: string;
 		KONSOLE_DBUS_WINDOW: string;
 		_: string;
 		NODE_ENV: string;
 		[key: `PUBLIC_${string}`]: undefined;
-		[key: string]: string | undefined;
+		[key: `${string}`]: string | undefined;
 	}
 }
 

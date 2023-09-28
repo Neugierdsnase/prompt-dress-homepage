@@ -15,7 +15,7 @@
 	let { features, posts, socialProofs } = data;
 </script>
 
-<div id="dupe" class="container">
+<div class="container">
 	<Hero />
 	<About />
 	<Features {features} />

@@ -4,7 +4,6 @@ title: The Basics of Prompt Engineering
 date: 2023-09-22T21:55:21.800Z
 excerpt: How to draft prompts that guarantee satisfying results
 coverImage: /images/cyberpunk/tailor.png
-hidden: true
 tags:
   - prompt engineering
 ---
