@@ -15,7 +15,7 @@
 	let { features, posts, socialProofs } = data;
 </script>
 
-<div class="container">
+<div id="dupe" class="container">
 	<Hero />
 	<About />
 	<Features {features} />
@@ -23,5 +23,4 @@
 		<RecentPosts {posts} />
 	{/if}
 	<SocialProofSection {socialProofs} />
-	<h1>I AM AT THE VERY BOTTOM</h1>
 </div>

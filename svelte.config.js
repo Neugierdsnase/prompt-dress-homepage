@@ -45,7 +45,7 @@ const config = {
 			]
 		})
 	],
-	extensions: extensions
+	extensions
 };
 
 export default config;

@@ -29,6 +29,11 @@
 		background: var(--color--page-background);
 		position: relative;
 	}
+
+	br {
+		margin: 4px 0;
+	}
+
 	.container {
 		display: flex;
 		flex-direction: column;
