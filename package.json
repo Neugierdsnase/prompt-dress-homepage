@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev --host",
-		"build": "bun run optimize-images && vite build",
+		"build": "npm run optimize-images && vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
@@ -14,7 +14,7 @@
 		"story:build": "histoire build",
 		"story:preview": "histoire preview",
 		"optimize-images": "image-transmutation --run --sourceFolder './static/images' --targetFolder './static/images' --inputFormats 'jpg' --inputFormats 'jpeg' --inputFormats 'png' --outputFormats 'webp' --outputFormats 'avif'",
-		"prebuild": "bun run optimize-images",
+		"prebuild": "npm run optimize-images",
 		"postbuild": "svelte-sitemap"
 	},
 	"devDependencies": {
