@@ -123,35 +123,15 @@ const options = {
   app_template_contains_nonce: false,
   csp: { "mode": "auto", "directives": { "upgrade-insecure-requests": false, "block-all-mixed-content": false }, "reportOnly": { "upgrade-insecure-requests": false, "block-all-mixed-content": false } },
   csrf_check_origin: true,
-  track_server_fetches: false,
   embedded: false,
   env_public_prefix: "PUBLIC_",
-  env_private_prefix: "",
   hooks: null,
   // added lazily, via `get_hooks`
   preload_strategy: "modulepreload",
   root: Root,
   service_worker: false,
   templates: {
-    app: ({ head, body, assets: assets2, nonce, env }) => '<!DOCTYPE html>\n<html lang="en">\n\n<head>\n	<meta charset="utf-8" />\n\n	<!-- Favicon -->\n	<link rel="apple-touch-icon" sizes="180x180" href="' + assets2 + '/favicons/apple-touch-icon.png" />\n	<link rel="icon" type="image/png" sizes="32x32" href="' + assets2 + '/favicons/favicon-32x32.png" />\n	<link rel="icon" type="image/png" sizes="16x16" href="' + assets2 + '/favicons/favicon-16x16.png" />\n	<link rel="manifest" href="' + assets2 + '/favicons/site.webmanifest" />\n	<link rel="mask-icon" href="' + assets2 + '/favicons/safari-pinned-tab.svg" color="#f500ff" />\n	<link rel="shortcut icon" href="' + assets2 + '/favicons/favicon.ico" />\n	<link rel="icon" href="' + assets2 + `/favicons/favicon.png" />
-
-	<!-- Tell browser this site is responsive -->
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<!-- Tell browser this site supports light and dark mode -->
-	<meta name="color-scheme" content="dark" />
-	<!-- Color for browser url bar in mobile/Safari -->
-	<meta name="theme-color" content="#f500ff" />
-	<!-- Disable Google FLOC -->
-	<meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
-
-	<!-- <script> -->
-	<!-- 	// Calling this here so that it loads as quickly as possible -->
-	<!-- 	// Avoiding a flash of light mode in case dark mode is used -->
-	<!-- 	const theme = localStorage.getItem('theme-preference') || 'auto'; -->
-	<!-- 	document.firstElementChild?.setAttribute('data-theme', theme); -->
-	<!-- <\/script> -->
-
-	` + head + '\n</head>\n\n<body data-sveltekit-preload-data="hover">\n	<div id="svelte-root">' + body + "</div>\n</body>\n\n</html>\n",
+    app: ({ head, body, assets: assets2, nonce, env }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n\n		<!-- Favicon -->\n		<link rel="manifest" href="' + assets2 + '/favicons/site.webmanifest" />\n		<link rel="icon" href="' + assets2 + '/favicons/icon48.png" />\n\n		<!-- Tell browser this site is responsive -->\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		<!-- Tell browser this site supports only dark mode -->\n		<meta name="color-scheme" content="dark" />\n		<!-- Color for browser url bar in mobile/Safari -->\n		<meta name="theme-color" content="#f500ff" />\n		<!-- Disable Google FLOC -->\n		<meta http-equiv="Permissions-Policy" content="interest-cohort=()" />\n\n		' + head + '\n	</head>\n\n	<body data-sveltekit-preload-data="hover">\n		<div id="svelte-root">' + body + "</div>\n	</body>\n</html>\n",
     error: ({ status, message }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -167,7 +147,6 @@ const options = {
 				align-items: center;
 				justify-content: center;
 				height: 100vh;
-				margin: 0;
 			}
 
 			.error {
@@ -213,7 +192,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "b22fju"
+  version_hash: "1qedb4g"
 };
 function get_hooks() {
   return {};
@@ -221,12 +200,12 @@ function get_hooks() {
 export {
   assets as a,
   base as b,
-  set_public_env as c,
-  set_assets as d,
-  set_building as e,
+  set_assets as c,
+  set_building as d,
+  set_private_env as e,
   get_hooks as g,
   options as o,
   public_env as p,
   reset as r,
-  set_private_env as s
+  set_public_env as s
 };

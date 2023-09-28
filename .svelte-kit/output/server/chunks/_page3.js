@@ -6,6 +6,7 @@ const metadata = {
   "date": "2023-04-22T21:55:21.800Z",
   "excerpt": "How code and structure are organized.",
   "coverImage": "/images/posts/project-structure.jpg",
+  "hidden": true,
   "tags": ["Documentation"]
 };
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -20,10 +21,10 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 <p>Organisms, in this project, are code blocks that represent a section of a page, such as the header, footer and hero section. They can be used directly in a page as a sort of building block, so the page’s code can be as simple as this:</p>
 ${validate_component(CodeBlock, "CodeBlock").$$render($$result, { lang: "html", filename: "+page.svelte" }, {}, {
     default: () => {
-      return `<pre class="language-html"><!-- HTML_TAG_START -->${`<code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Header</span> <span class="token punctuation">/></span></span>
+      return `<pre class="language-html"><!-- HTML_TAG_START -->${`<code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span> <span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Hero</span> <span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>About</span> <span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Footer</span> <span class="token punctuation">/></span></span></code>`}<!-- HTML_TAG_END --></pre>`;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span> <span class="token punctuation">/></span></span></code>`}<!-- HTML_TAG_END --></pre>`;
     }
   })}
 <h2 id="component-gallery"><a class="heading-link" title="Permalink" aria-hidden="true" href="#component-gallery"><span>#</span></a>Component Gallery</h2>

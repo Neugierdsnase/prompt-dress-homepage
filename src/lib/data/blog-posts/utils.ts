@@ -1,18 +1,18 @@
 // Disabling eslint because importing Prism is needed
 // even if not directly used in this file
 // eslint-disable-next-line no-unused-vars
-import Prism from "prismjs";
+import Prism from 'prismjs';
 // Here we assign it to a variable so the import above
 // is not removed automatically on build
 const ifYouRemoveMeTheBuildFails = Prism;
-import "prism-svelte";
-import readingTime from "reading-time/lib/reading-time";
-import striptags from "striptags";
-import type { BlogPostType } from "$lib/utils/types";
+import 'prism-svelte';
+import readingTime from 'reading-time/lib/reading-time';
+import striptags from 'striptags';
+import type { BlogPostType } from '$lib/utils/types';
 
 export const importPosts = (render = false) => {
-  const blogImports = import.meta.glob("$routes/*/*/*.md", { eager: true });
-  const innerImports = import.meta.glob("$routes/*/*/*/*.md", { eager: true });
+  const blogImports = import.meta.glob('$routes/*/*/*.md', { eager: true });
+  const innerImports = import.meta.glob('$routes/*/*/*/*.md', { eager: true });
 
   const imports = { ...blogImports, ...innerImports };
 
@@ -22,9 +22,7 @@ export const importPosts = (render = false) => {
     if (post) {
       posts.push({
         ...post.metadata,
-        html: render && post.default.render
-          ? post.default.render()?.html
-          : undefined,
+        html: render && post.default.render ? post.default.render()?.html : undefined
       });
     }
   }
@@ -43,15 +41,13 @@ export const filterPosts = (posts: BlogPostType[]) => {
           : 0
     )
     .map((post) => {
-      const readingTimeResult = post.html
-        ? readingTime(striptags(post.html) || "")
-        : undefined;
+      const readingTimeResult = post.html ? readingTime(striptags(post.html) || '') : undefined;
       const relatedPosts = getRelatedPosts(posts, post);
 
       return {
         ...post,
-        readingTime: readingTimeResult ? readingTimeResult.text : "",
-        relatedPosts: relatedPosts,
+        readingTime: readingTimeResult ? readingTimeResult.text : '',
+        relatedPosts
       } as BlogPostType;
     });
 };
@@ -65,18 +61,13 @@ const getRelatedPosts = (posts: BlogPostType[], post: BlogPostType) => {
     .sort((a, b) => {
       const aTags = a.tags?.filter((t) => post.tags?.includes(t));
       const bTags = b.tags?.filter((t) => post.tags?.includes(t));
-      return aTags?.length > bTags?.length
-        ? -1
-        : aTags?.length < bTags?.length
-          ? 1
-          : 0;
+      return aTags?.length > bTags?.length ? -1 : aTags?.length < bTags?.length ? 1 : 0;
     });
 
   return relatedPosts.slice(0, 3).map((p) => ({
     ...p,
-    readingTime: p.html ? readingTime(striptags(p.html) || "").text : "",
+    readingTime: p.html ? readingTime(striptags(p.html) || '').text : ''
   }));
 };
 
 // #endregion
-

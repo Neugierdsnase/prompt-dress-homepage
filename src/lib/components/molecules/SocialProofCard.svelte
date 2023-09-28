@@ -1,5 +1,7 @@
 <script lang="ts">
 	import QuoteIcon from '$lib/icons/quote.svelte';
+	import Image from '../atoms/Image.svelte';
+
 	export let name: string;
 	export let position: string;
 	export let image: string;
@@ -12,7 +14,7 @@
 		<QuoteIcon />
 	</div>
 	<div class="image">
-		<img src={image} aria-hidden alt="Image of the person who gave the testimonial" />
+		<Image src={image} alt="Image of the person who gave the testimonial" />
 	</div>
 	<div class="content">
 		<p class="quote">

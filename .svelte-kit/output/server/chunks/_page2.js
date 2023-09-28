@@ -5,6 +5,7 @@ const metadata = {
   "date": "2023-04-22T21:55:27.154Z",
   "excerpt": "How to customize what you're seeing here and make it your own.",
   "coverImage": "/images/posts/customization.jpg",
+  "hidden": true,
   "tags": ["Documentation"]
 };
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {

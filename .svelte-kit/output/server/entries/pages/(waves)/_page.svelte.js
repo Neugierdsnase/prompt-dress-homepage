@@ -11,7 +11,7 @@ const Download = create_ssr_component(($$result, $$props, $$bindings, slots) => 
 });
 const SingleSparkle_svelte_svelte_type_style_lang = "";
 const css$9 = {
-  code: ".wrapper.svelte-npbrw{position:absolute;pointer-events:none;display:flex;z-index:2;filter:blur(2px);animation:svelte-npbrw-grow-and-shrink 1400ms ease-in-out forwards}@keyframes svelte-npbrw-grow-and-shrink{0%{transform:scale(0)}50%{transform:scale(1)}100%{transform:scale(0)}}",
+  code: ".wrapper.svelte-1rrd21n{position:absolute;display:flex;pointer-events:none;z-index:2;filter:blur(2px);animation:svelte-1rrd21n-grow-and-shrink 1500ms ease-in-out forwards}@keyframes svelte-1rrd21n-grow-and-shrink{0%{transform:scale(0)}50%{transform:scale(1)}100%{transform:scale(0)}}",
   map: null
 };
 const SingleSparkle = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -25,7 +25,7 @@ const SingleSparkle = create_ssr_component(($$result, $$props, $$bindings, slots
   if ($$props.offset === void 0 && $$bindings.offset && offset !== void 0)
     $$bindings.offset(offset);
   $$result.css.add(css$9);
-  return `<div class="wrapper svelte-npbrw" style="${"top: " + escape(offset.top - 10, true) + "; left: " + escape(offset.left, true) + ";"}"><svg${add_attribute("width", size, 0)}${add_attribute("height", size, 0)} viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M80 0C80 0 84.2846 41.2925 101.496 58.504C118.707 75.7154 160 80 160 80C160 80 118.707 84.2846 101.496 101.496C84.2846 118.707 80 160 80 160C80 160 75.7154 118.707 58.504 101.496C41.2925 84.2846 0 80 0 80C0 80 41.2925 75.7154 58.504 58.504C75.7154 41.2925 80 0 80 0Z"${add_attribute("fill", color, 0)}></path></svg></div>`;
+  return `<div class="wrapper svelte-1rrd21n" style="${"top: " + escape(offset.top - 10, true) + "; left: " + escape(offset.left, true) + ";"}"><svg${add_attribute("width", size, 0)}${add_attribute("height", size, 0)} viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M80 0C80 0 84.2846 41.2925 101.496 58.504C118.707 75.7154 160 80 160 80C160 80 118.707 84.2846 101.496 101.496C84.2846 118.707 80 160 80 160C80 160 75.7154 118.707 58.504 101.496C41.2925 84.2846 0 80 0 80C0 80 41.2925 75.7154 58.504 58.504C75.7154 41.2925 80 0 80 0Z"${add_attribute("fill", color, 0)}></path></svg></div>`;
 });
 const Sparkles_svelte_svelte_type_style_lang = "";
 const css$8 = {
@@ -134,15 +134,15 @@ const About = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 		</p>
 		<div class="socials svelte-1qp99xm"><span class="svelte-1qp99xm">Socials:</span>
 			${validate_component(Socials, "Socials").$$render($$result, {}, {}, {})}</div></div>
-	<div class="image svelte-1qp99xm">${validate_component(Image, "Image").$$render(
+	<a href="https://chrome.google.com/webstore/detail/prompt-dress/mpcinhhegdohpapgmiopjlfhemhhfmid" rel="noopener" target="_blank"><div class="image svelte-1qp99xm">${validate_component(Image, "Image").$$render(
     $$result,
     {
-      src: "/images/sample-image.png",
+      src: "/images/logos/logo_large.png",
       alt: "Sample for the static template"
     },
     {},
     {}
-  )}</div>
+  )}</div></a>
 </section>`;
 });
 const RecentPosts_svelte_svelte_type_style_lang = "";
@@ -159,8 +159,8 @@ const RecentPosts = create_ssr_component(($$result, $$props, $$bindings, slots) 
     $$result,
     {
       id: "recent-posts",
-      title: "Prompt Engineering",
-      description: "Learn more about how to write prompts that get you the best results with these blog posts.",
+      title: "Learn about Prompt Engineering",
+      description: "Unlock the full potential of AI with some proven techniques and best practices.",
       align: "left"
     },
     {},
@@ -222,7 +222,7 @@ const FeatureCard = create_ssr_component(($$result, $$props, $$bindings, slots) 
       })}</div>` : ``}</div>`;
     },
     content: () => {
-      return `<div class="content svelte-x9191d" slot="content"><div class="title svelte-x9191d"><span>${escape(name)}</span></div>
+      return `<div class="content svelte-x9191d" slot="content"><div class="title svelte-x9191d"><span><!-- HTML_TAG_START -->${name}<!-- HTML_TAG_END --></span></div>
 		<p><!-- HTML_TAG_START -->${description}<!-- HTML_TAG_END --></p></div>`;
     },
     image: () => {
@@ -302,10 +302,18 @@ const SocialProofCard = create_ssr_component(($$result, $$props, $$bindings, slo
   $$result.css.add(css$1);
   return `${((tag) => {
     return tag ? `<${as} class="social-proof-card svelte-1eieqao">${is_void(tag) ? "" : `<div class="quote-icon svelte-1eieqao">${validate_component(Quote, "QuoteIcon").$$render($$result, {}, {}, {})}</div>
-	<div class="image svelte-1eieqao"><img${add_attribute("src", image, 0)} aria-hidden alt="Image of the person who gave the testimonial"></div>
+	<div class="image svelte-1eieqao">${validate_component(Image, "Image").$$render(
+      $$result,
+      {
+        src: image,
+        alt: "Image of the person who gave the testimonial"
+      },
+      {},
+      {}
+    )}</div>
 	<div class="content svelte-1eieqao"><p class="quote svelte-1eieqao">${escape(quote)}</p>
 		<div><p class="name svelte-1eieqao">${escape(name)}</p>
-			<p class="position svelte-1eieqao">${escape(position)}</p></div></div>`}${is_void(tag) ? "" : `</${tag}>`}` : "";
+			<p class="position svelte-1eieqao"><!-- HTML_TAG_START -->${position}<!-- HTML_TAG_END --></p></div></div>`}${is_void(tag) ? "" : `</${tag}>`}` : "";
   })(as)}`;
 });
 const SocialProofSection_svelte_svelte_type_style_lang = "";

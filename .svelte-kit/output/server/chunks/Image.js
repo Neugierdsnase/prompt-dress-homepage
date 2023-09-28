@@ -12,23 +12,7 @@ const Image = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { formats = ["avif", "webp", "png"] } = $$props;
   let { widths = void 0 } = $$props;
   function buildSrcset() {
-    let srcset = "";
-    if (widths) {
-      for (let i = 0; i < widths.length; i++) {
-        srcset += `${fileName}-${widths[i]}.${formats[0]} ${widths[i]}w`;
-        if (i < widths.length - 1) {
-          srcset += ", ";
-        }
-      }
-    } else {
-      for (let i = 0; i < formats.length; i++) {
-        srcset += `${fileName}.${formats[i]}`;
-        if (i < formats.length - 1) {
-          srcset += ", ";
-        }
-      }
-    }
-    return srcset;
+    return widths ? widths.map((width) => `${fileName}-${width}.${formats[0]} ${width}w`).join(", ") : formats.map((format) => `${fileName}.${format}`).join(", ");
   }
   if ($$props.src === void 0 && $$bindings.src && src !== void 0)
     $$bindings.src(src);
@@ -42,7 +26,7 @@ const Image = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.widths(widths);
   $$result.css.add(css);
   fileName = src.split(".")[0];
-  return `<img${add_attribute("srcset", buildSrcset(), 0)}${add_attribute("src", src, 0)}${add_attribute("alt", alt, 0)} loading="lazy" decoding="async" class="${["svelte-1ykl0dj", fullBleed ? "full-bleed" : ""].join(" ").trim()}">`;
+  return `<img${add_attribute("srcset", buildSrcset(), 0)}${add_attribute("src", void 0, 0)}${add_attribute("alt", alt, 0)} loading="lazy" decoding="async" class="${["svelte-1ykl0dj", fullBleed ? "full-bleed" : ""].join(" ").trim()}">`;
 });
 export {
   Image as I

@@ -1,8 +1,9 @@
 import { c as create_ssr_component, v as validate_component } from "./index.js";
+import { I as Image } from "./Image.js";
 import { R as RssLink, S as Socials } from "./Socials.js";
 const Logo_svelte_svelte_type_style_lang = "";
 const css$2 = {
-  code: ".logo.svelte-qu2viy.svelte-qu2viy{width:auto;height:100%;display:flex;gap:16px;align-items:center}@media(max-width: 767px){.logo.svelte-qu2viy.svelte-qu2viy{gap:8px}}.logo.svelte-qu2viy #logo-text.svelte-qu2viy{width:auto;height:100%;max-height:28px}.logo.svelte-qu2viy #logo-text #text.svelte-qu2viy{transition:all 0.2s ease-in-out;fill:var(--color--text)}.logo.svelte-qu2viy:hover #logo-text.svelte-qu2viy{filter:drop-shadow(0px 0px 3px var(--color--primary))}@media screen and (prefers-reduced-motion: no-preference){.animated.svelte-qu2viy #text.svelte-qu2viy{animation:svg-text-stroke 3s;stroke-width:2;--text-color:var(--color--text)}}",
+  code: ".logo.svelte-r4idv2{width:fit-content;height:100%;display:flex;gap:16px;align-items:center}@media(max-width: 767px){.logo.svelte-r4idv2{gap:8px}}@media screen and (prefers-reduced-motion: no-preference){}",
   map: null
 };
 const Logo = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -10,7 +11,15 @@ const Logo = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   if ($$props.animated === void 0 && $$bindings.animated && animated !== void 0)
     $$bindings.animated(animated);
   $$result.css.add(css$2);
-  return `<div class="${["logo svelte-qu2viy", animated ? "animated" : ""].join(" ").trim()}"><svg id="logo-text" width="723.84009" height="116.720268" viewBox="0 0 723.84009 116.720269" fill="none" xmlns="http://www.w3.org/2000/svg" class="svelte-qu2viy"><text xml:space="preserve" id="text" transform="translate(-278.77228,-206.83728)" class="svelte-qu2viy"><tspan x="275.57227" y="292.17088" id="tspan1319"><tspan style="font-size:106.667px;font-family:YoungSerif;" id="tspan1317">Site Logo</tspan></tspan></text></svg>
+  return `<div class="${["logo svelte-r4idv2", animated ? "animated" : ""].join(" ").trim()}">${validate_component(Image, "Image").$$render(
+    $$result,
+    {
+      src: "/images/logos/icon48.png",
+      alt: "Prompt Dress Logo"
+    },
+    {},
+    {}
+  )}
 </div>`;
 });
 const ThemeToggle_svelte_svelte_type_style_lang = "";

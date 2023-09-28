@@ -13,33 +13,15 @@
 	function buildSrcset() {
 		if (dev) return;
 
-		let srcset = '';
-
-		if (widths) {
-			for (let i = 0; i < widths.length; i++) {
-				srcset += `${fileName}-${widths[i]}.${formats[0]} ${widths[i]}w`;
-
-				if (i < widths.length - 1) {
-					srcset += ', ';
-				}
-			}
-		} else {
-			for (let i = 0; i < formats.length; i++) {
-				srcset += `${fileName}.${formats[i]}`;
-
-				if (i < formats.length - 1) {
-					srcset += ', ';
-				}
-			}
-		}
-
-		return srcset;
+		return widths
+			? widths.map((width) => `${fileName}-${width}.${formats[0]} ${width}w`).join(', ')
+			: formats.map((format) => `${fileName}.${format}`).join(', ');
 	}
 </script>
 
 <img
 	srcset={buildSrcset()}
-	{src}
+	src={dev ? src : undefined}
 	{alt}
 	loading="lazy"
 	decoding="async"
