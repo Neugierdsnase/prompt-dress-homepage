@@ -1,58 +1,20 @@
 <script lang="ts">
-	import Sparkle from '$lib/components/atoms/SingleSparkle.svelte';
-	import type { SparkleType } from '$lib/utils/types';
-	import { onDestroy, onMount } from 'svelte';
-	const random = (min: number, max: number) => Math.floor(Math.random() * (max - min)) + min;
+	import { fly } from 'svelte/transition';
+	import SingleSparkle from './SingleSparkle.svelte';
 
-	export let color: 'default' | 'primary' | 'secondary' = 'default';
-
-	const generateSparkle = (): SparkleType => {
-		return {
-			id: String(random(10000, 99999)),
-			createdAt: Date.now(),
-			color:
-				color === 'primary'
-					? 'var(--color--primary)'
-					: color === 'secondary'
-					? 'var(--color--secondary)'
-					: 'var(--color--yellow',
-			size: random(10, 20),
-			style: {
-				// Pick a random spot in the available space
-				top: random(-10, 80) + '%',
-				left: random(0, 100) + '%'
-			}
-		};
-	};
-
-	let sparkles: SparkleType[] = [];
-	let sparklesInterval: any; // it's NodeJS.Timeout, but I'm using bun now
-
-	onMount(() => {
-		sparklesInterval = setInterval(() => {
-			const now = Date.now();
-			// Create a new sparkle
-			const sparkle = generateSparkle();
-			// Clean up any "expired" sparkles
-			const nextSparkles = sparkles.filter((sparkle) => {
-				const delta = now - sparkle.createdAt;
-				return delta < 1500;
-			});
-			// Include our new sparkle
-			nextSparkles.push(sparkle);
-			sparkles = nextSparkles;
-		}, 400);
-	});
-
-	onDestroy(() => {
-		clearInterval(sparklesInterval);
-	});
+	const sparklesArray = Array(10).fill(0);
 </script>
 
 <div class="sparkle-wrapper">
-	{#each sparkles as sparkle (sparkle.id)}
-		<Sparkle color={sparkle.color} size={String(sparkle.size)} offset={sparkle.style} />
+	{#each sparklesArray as _}
+		<span in:fly={{ y: 40 }} class="sparkle"
+			><SingleSparkle
+				offset={{ left: Math.random() * 200, top: Math.random() * 200 }}
+				size={String(Math.random() * 20) + 'px'}
+			/></span
+		>
 	{/each}
+
 	<span class="slot-wrapper">
 		<slot />
 	</span>
@@ -66,6 +28,57 @@
 		.slot-wrapper {
 			position: relative;
 			z-index: 1;
+		}
+	}
+
+	@function randomNum($min, $max) {
+		$rand: random();
+		$randomNum: $min + floor($rand * (($max - $min) + 1));
+		@return $randomNum;
+	}
+
+	.sparkle-wrapper {
+		position: relative;
+		display: inline-block;
+
+		.slot-wrapper {
+			position: relative;
+			z-index: 1;
+		}
+
+		.sparkle {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
+		@for $i from 1 through 10 {
+			.sparkle:nth-child(#{$i}) {
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background-color: var(--color--yellow);
+				top: randomNum(0, 100) + '%';
+				left: randomNum(0, 100) + '%';
+				opacity: 0;
+				animation: sparkleAnimation 1.5s infinite;
+				animation-delay: randomNum(0, 5) + 's';
+			}
+		}
+
+		@keyframes sparkleAnimation {
+			0%,
+			100% {
+				opacity: 0;
+				transform: scale(0);
+			}
+			50% {
+				opacity: 1;
+				transform: scale(1);
+			}
 		}
 	}
 </style>

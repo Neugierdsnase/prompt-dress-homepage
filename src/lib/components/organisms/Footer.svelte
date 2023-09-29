@@ -19,7 +19,7 @@
 			>
 			based on a truly amazing template by
 			<a
-				href="https://fantinel.dev?utm_source=site-template"
+				href="https://fantinel.dev?utm_source=prompt-dress"
 				target="_blank"
 				rel="noopener noreferrer">Matheus Fantinel</a
 			>.
@@ -35,13 +35,18 @@
 
 <style lang="scss">
 	footer {
-		height: 340px;
+		position: relative;
+		z-index: 1;
+		height: 240px;
 		width: 100%;
-		background: linear-gradient(60deg, var(--color--waves-start) 0%, var(--color--waves-end) 100%);
 		display: grid;
 		grid-template-rows: 120px 1fr;
 
 		.content {
+			position: absolute;
+			bottom: 10px;
+			left: 0;
+			width: 100%;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -69,5 +74,12 @@
 				filter: drop-shadow(0px 0px 3px var(--color--primary));
 			}
 		}
+	}
+
+	.wave {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
 	}
 </style>

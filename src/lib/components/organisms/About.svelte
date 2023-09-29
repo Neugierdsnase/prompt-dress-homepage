@@ -19,11 +19,7 @@
 			<Socials />
 		</div>
 	</div>
-	<a
-		href="https://chrome.google.com/webstore/detail/prompt-dress/mpcinhhegdohpapgmiopjlfhemhhfmid"
-		rel="noopener"
-		target="_blank"
-	>
+	<a href="https://bit.ly/prompt-dress" rel="noopener" target="_blank">
 		<div class="image">
 			<Image src="/images/logos/logo_large.png" alt="Sample for the static template" />
 		</div>

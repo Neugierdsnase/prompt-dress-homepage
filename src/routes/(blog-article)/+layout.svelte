@@ -6,8 +6,9 @@
 
 	import { keywords, siteBaseUrl, title } from '$lib/data/meta';
 	import type { BlogPostType } from '$lib/utils/types';
-	import RelatedPosts from '$lib/components/organisms/RelatedPosts.svelte';
 	import Image from '$lib/components/atoms/Image.svelte';
+	import NewsletterSection from '$lib/components/organisms/NewsletterSection.svelte';
+	import DownloadExtension from '$lib/components/organisms/DownloadExtension.svelte';
 
 	export let data: { post: BlogPostType };
 	$: ({ post } = data);
@@ -78,11 +79,9 @@
 			</div>
 		</article>
 
-		{#if post.relatedPosts && post.relatedPosts.length > 0}
-			<div class="container">
-				<RelatedPosts posts={post.relatedPosts} />
-			</div>
-		{/if}
+		<div class="container">
+			<DownloadExtension />
+		</div>
 	</main>
 
 	<Footer />
