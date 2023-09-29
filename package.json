@@ -13,8 +13,7 @@
 		"story:dev": "histoire dev",
 		"story:build": "histoire build",
 		"story:preview": "histoire preview",
-		"optimize-images": "image-transmutation --run --sourceFolder './build/images' --targetFolder './build/images' --inputFormats 'jpg' --inputFormats 'jpeg' --inputFormats 'png' --outputFormats 'png'  --outputFormats 'webp' --outputFormats 'avif'",
-		"postbuild": "bun run optimize-images && svelte-sitemap --domain=https://prompt-dress.com"
+		"postbuild": "svelte-sitemap --domain=https://prompt-dress.com"
 	},
 	"devDependencies": {
 		"@histoire/plugin-svelte": "^0.16.1",
@@ -27,7 +26,6 @@
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"histoire": "^0.16.1",
-		"image-transmutation": "^0.1.2",
 		"mdsvex": "^0.10.6",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.8.1",
