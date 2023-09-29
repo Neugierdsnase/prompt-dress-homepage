@@ -13,9 +13,7 @@
 		<span class="center">Organize your AI prompts<br />with ease and joy.</span>
 	</p>
 	<div class="ctas">
-		<Button
-			href="https://chrome.google.com/webstore/detail/prompt-dress/mpcinhhegdohpapgmiopjlfhemhhfmid"
-		>
+		<Button href="https://bit.ly/website-chrome-web-store">
 			<DownloadIcon slot="icon" />
 			Download for Chrome
 		</Button>
