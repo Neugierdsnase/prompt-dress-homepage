@@ -32,6 +32,8 @@
 </svelte:element>
 
 <style lang="scss">
+	@import '$lib/scss/breakpoints.scss';
+
 	.social-proof-card {
 		position: relative;
 		flex-shrink: 0;
@@ -43,6 +45,11 @@
 		align-items: end;
 		border-radius: 10px;
 		background-color: var(--color--post-page-background);
+
+		@include for-phone-only {
+			width: 100%;
+			margin: 0px 20px;
+		}
 	}
 
 	.quote-icon {
