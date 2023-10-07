@@ -14,14 +14,6 @@
 	>
 		<MediumIcon />
 	</a>
-	<a
-		href="https://mstdn.social/@promptdress"
-		target="_blank"
-		rel="me noreferrer"
-		title="Minor updates go on Mastodon"
-	>
-		<MastodonIcon />
-	</a>
 	<RssLink />
 	<a
 		href="mailto:prompt-dress@vomkonstant.in"
