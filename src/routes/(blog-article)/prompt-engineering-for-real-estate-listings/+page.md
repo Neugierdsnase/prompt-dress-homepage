@@ -3,7 +3,7 @@ slug: prompt-engineering-for-real-estate-listings
 title: "Prompt Engineering: A real life example EVERYONE can use (but I'm using real estate as an example)"
 date: 2023-09-29T13:55:21.800Z
 excerpt: Explore the basics of prompt engineering and improve your interactions with Large Language Models (LLMs). Learn how crafting the right prompts can lead to better responses in this simple guide.
-coverImage: /images/cyberpunk/tailor.png
+coverImage: /images/cyberpunk/real-estate.png
 tags:
   - prompt engineering
   - basics
