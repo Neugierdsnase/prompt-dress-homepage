@@ -76,6 +76,8 @@ Here is how our prompt looks like, but with dynamic values for the language you 
 
 Pretty cool, huh? And one more thing: If you download the extension now, you will find that this very prompt is actually already in there as one of the example prompts!
 
+There is even more to this, but that can be better shown in a video, which is why I will upload tutorials with this kind of content to [this channel](). [Subscribe now]() if you want to see me craft prompts in real time!
+
 Please let me know if you found this helpful via the appropriate buttons or commenting. If you are falling in love with the extension and want to keep up to date with its development, the best way is by [following me on Medium](https://medium.com/@k8603427), [signing up for my email newsletter](https://prompt-dress.vomkonstant.in/p/5f693fe8-6f20-4796-b0dc-8d3848e591a0), or [following this blog.](https://prompt-dress.com/blog)
 
 A version of this article has been posted [to my Medium account.](https://medium.com/@k8603427)
