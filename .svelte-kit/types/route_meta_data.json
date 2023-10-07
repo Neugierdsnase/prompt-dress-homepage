@@ -34,6 +34,14 @@
 		"src/routes/(blog-article)/+layout.server.ts",
 		"src/routes/+layout.ts"
 	],
+	"/(blog-article)/prompt-engineering-for-language-learners": [
+		"src/routes/(blog-article)/+layout.server.ts",
+		"src/routes/+layout.ts"
+	],
+	"/(blog-article)/prompt-engineering-for-real-estate-listings": [
+		"src/routes/(blog-article)/+layout.server.ts",
+		"src/routes/+layout.ts"
+	],
 	"/rss.xml": [
 		"src/routes/rss.xml/+server.ts"
 	]

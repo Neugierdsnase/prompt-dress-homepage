@@ -9,7 +9,7 @@ type OutputDataShape<T> = MaybeWithVoid<Omit<App.PageData, RequiredKeys<T>> & Pa
 type EnsureDefined<T> = T extends null | undefined ? {} : T;
 type OptionalUnion<U extends Record<string, any>, A extends keyof U = U extends U ? keyof U : never> = U extends unknown ? { [P in Exclude<A, keyof U>]?: never } & U : never;
 export type Snapshot<T = any> = Kit.Snapshot<T>;
-type LayoutRouteId = RouteId | "/(blog-article)/blog-posts" | "/(blog-article)/customization" | "/(blog-article)/project-structure" | "/(blog-article)/prompt-engineering-basics"
+type LayoutRouteId = RouteId | "/(blog-article)/blog-posts" | "/(blog-article)/customization" | "/(blog-article)/project-structure" | "/(blog-article)/prompt-engineering-basics" | "/(blog-article)/prompt-engineering-for-language-learners" | "/(blog-article)/prompt-engineering-for-real-estate-listings"
 type LayoutParams = RouteParams & {  }
 type LayoutServerParentData = EnsureDefined<import('../$types.js').LayoutServerData>;
 type LayoutParentData = EnsureDefined<import('../$types.js').LayoutData>;
