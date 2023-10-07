@@ -2,9 +2,18 @@
 	import EmailIcon from '$lib/icons/socials/email.svelte';
 	import MastodonIcon from '$lib/icons/socials/mastodon.svelte';
 	import RssLink from '../atoms/RssLink.svelte';
+	import MediumIcon from '$lib/icons/socials/medium.svelte';
 </script>
 
 <div class="socials">
+	<a
+		href="https://medium.com/@k8603427"
+		target="_blank"
+		rel="noopener noreferrer"
+		title="All blog posts also go on Medium"
+	>
+		<MediumIcon />
+	</a>
 	<a
 		href="https://mstdn.social/@promptdress"
 		target="_blank"
