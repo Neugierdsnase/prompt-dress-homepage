@@ -26,6 +26,9 @@
 		"src/routes/(blog-article)/+layout.server.ts",
 		"src/routes/+layout.ts"
 	],
+	"/(waves)/privacy-policy": [
+		"src/routes/+layout.ts"
+	],
 	"/(blog-article)/project-structure": [
 		"src/routes/(blog-article)/+layout.server.ts",
 		"src/routes/+layout.ts"
@@ -44,5 +47,8 @@
 	],
 	"/rss.xml": [
 		"src/routes/rss.xml/+server.ts"
+	],
+	"/(waves)/support": [
+		"src/routes/+layout.ts"
 	]
 }

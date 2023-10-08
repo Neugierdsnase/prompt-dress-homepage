@@ -1,10 +1,9 @@
 ---
-slug: prompt-engineering-basics
+slug: prompt-engineering-for-language-learners
 title: 'Prompt Engineering for language learners'
 date: 2023-10-10T13:55:21.800Z
 excerpt: Learn how to prime ChatGPT so you can use it as a conversational partner for practicing second languages
 coverImage: /images/cyberpunk/conversation.png
-hidden: true
 tags:
   - prompt engineering
   - language learning
@@ -87,13 +86,13 @@ Well, here is where [this browser extension] comes into play. It allows us to sa
 
 _Disclaimer: I am the one-man show behind this browser extension, so this is my plug for the thing. It would really mean a lot to me if you checked it out and shot some feedback my way!_
 
-<img src="<https://c4.wallpaperflare.com/wallpaper/89/9/256/movie-puss-in-boots-wallpaper-thumb.jpg>" alt="Puss in Boots making puppy eyes." />
+<img src="https://c4.wallpaperflare.com/wallpaper/89/9/256/movie-puss-in-boots-wallpaper-thumb.jpg" alt="Puss in Boots making puppy eyes." />
 
 Here is the even cooler part: If you want to keep some parts of the prompt changeable, you can put a placeholder in the text (and still maintain a default value).
 
 Here is what our prompt looks like, but with dynamic values for the language you want to practice, your level, and the topics you are familiar with.
 
-<img src="corsages_screenshot.png" alt="The conversation I had with ChatGPT after using the prompt we just created." />
+<img src="https://i.imgur.com/KA5YTA1.png" alt="The conversation I had with ChatGPT after using the prompt we just created." />
 
 Pretty cool, huh? And one more thing: If you download the extension now, you will find that this very prompt is already in there as one of the example prompts!
 
