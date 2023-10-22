@@ -12,18 +12,24 @@
 	const isEdge = browser?.name === 'edge';
 
 	let offsetY = 0;
+	let scale = 1;
+	let opacity = 1;
 
 	const handleScroll = () => {
 		let scrollY = window.scrollY;
+		opacity = scrollY > 76 ? 0 : 1;
 
 		offsetY = clamp(-1110, -(scrollY + 1) * 1.05, 0);
+		scale = clamp(0.5, 1 - scrollY / 200, 1);
 	};
 </script>
 
 <svelte:window on:scroll={handleScroll} />
 
 <section id="hero">
-	<h1 class="hello" style="transform: translateY({offsetY}px);">Prompt Dress</h1>
+	<h1 class="hello" style="transform: translateY({offsetY}px) scale({scale}); opacity: {opacity}">
+		Prompt Dress
+	</h1>
 	<p class="intro">
 		<span class="center">Organize your AI prompts<br />with ease and joy.</span>
 	</p>
