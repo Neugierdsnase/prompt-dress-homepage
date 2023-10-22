@@ -1,3 +1,2 @@
-export const prerender = true;
-export const csr = false;
-export const load = async () => {};
+export const prerender = false;
+export const ssr = false;

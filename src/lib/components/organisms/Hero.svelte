@@ -2,6 +2,14 @@
 	import DownloadIcon from '$lib/icons/download.svelte';
 	import Button from '$lib/components/atoms/Button.svelte';
 	import Sparkles from '../atoms/Sparkles.svelte';
+	import { detect } from 'detect-browser';
+	import ExternalLink from '$lib/icons/external-link.svelte';
+
+	const browser = detect();
+
+	const isChrome = browser?.name === 'chrome';
+	const isFirefox = browser?.name === 'firefox';
+	const isEdge = browser?.name === 'edge';
 </script>
 
 <section id="hero">
@@ -12,17 +20,27 @@
 		<span class="center">Organize your AI prompts<br />with ease and joy.</span>
 	</p>
 	<div class="ctas">
-		<Button href="https://bit.ly/website-chrome-web-store">
-			<DownloadIcon slot="icon" />
-			Download for Chrome
-		</Button>
-		<Button href="/firefox-coming-soon">
-			<DownloadIcon slot="icon" />
-			Download for Firefox
-		</Button>
-		<Button href="https://bit.ly/website-chrome-web-store">
-			<DownloadIcon slot="icon" />
-			Download for Edge
+		{#if isChrome}
+			<Button href="https://bit.ly/website-chrome-web-store">
+				<DownloadIcon slot="icon" />
+				Download for Chrome
+			</Button>
+		{/if}
+		{#if isFirefox}
+			<Button href="/firefox-coming-soon">
+				<DownloadIcon slot="icon" />
+				It's coming soon for Firefox, stay tuned!
+			</Button>
+		{/if}
+		{#if isEdge}
+			<Button href="https://bit.ly/website-chrome-web-store">
+				<DownloadIcon slot="icon" />
+				Download for Edge
+			</Button>
+		{/if}
+		<Button href="/download-extension">
+			<ExternalLink slot="icon" />
+			See all download options
 		</Button>
 	</div>
 </section>
