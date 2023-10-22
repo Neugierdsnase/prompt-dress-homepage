@@ -1,7 +1,6 @@
 <script>
 	import SparklingHighlight from '$lib/components/molecules/SparklingHighlight.svelte';
 	import Socials from '$lib/components/molecules/Socials.svelte';
-	import Image from '../atoms/Image.svelte';
 </script>
 
 <section id="about">
@@ -19,11 +18,15 @@
 			<Socials />
 		</div>
 	</div>
-	<a href="https://bit.ly/prompt-dress" rel="noopener" target="_blank">
-		<div class="image">
-			<Image src="/images/logos/logo_large.png" alt="Sample for the static template" />
-		</div>
-	</a>
+	<iframe
+		width="560"
+		height="315"
+		src="https://www.youtube.com/embed/O8_oTEoj15Q?si=6tRTi2TxFD0Hnac4"
+		title="YouTube video player"
+		frameborder="0"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+		allowfullscreen
+	/>
 </section>
 
 <style lang="scss">
@@ -76,11 +79,6 @@
 					display: none;
 				}
 			}
-		}
-
-		.image {
-			width: 220px;
-			height: 220px;
 		}
 	}
 </style>

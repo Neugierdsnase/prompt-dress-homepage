@@ -1,5 +1,4 @@
 <script>
-	import LearningIcon from '$lib/icons/learning.svelte';
 	import DownloadIcon from '$lib/icons/download.svelte';
 	import Button from '$lib/components/atoms/Button.svelte';
 	import Sparkles from '../atoms/Sparkles.svelte';
@@ -17,9 +16,13 @@
 			<DownloadIcon slot="icon" />
 			Download for Chrome
 		</Button>
-		<Button color="primary" href="/blog">
-			<LearningIcon slot="icon" />
-			Learn about AI prompting
+		<Button href="/firefox-coming-soon">
+			<DownloadIcon slot="icon" />
+			Download for Firefox
+		</Button>
+		<Button href="https://bit.ly/website-chrome-web-store">
+			<DownloadIcon slot="icon" />
+			Download for Edge
 		</Button>
 	</div>
 </section>

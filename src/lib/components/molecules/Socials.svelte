@@ -1,25 +1,31 @@
 <script>
 	import EmailIcon from '$lib/icons/socials/email.svelte';
-	import MastodonIcon from '$lib/icons/socials/mastodon.svelte';
-	import RssLink from '../atoms/RssLink.svelte';
 	import MediumIcon from '$lib/icons/socials/medium.svelte';
+	import YoutubeIcon from '$lib/icons/socials/youtube.svelte';
 </script>
 
 <div class="socials">
 	<a
+		href="https://www.youtube.com/channel/UCgE_-5ZfUR_UruSn1XrpXtw"
+		target="_blank"
+		rel="noopener noreferrer"
+		title="Subscribe to my YouTube channel"
+	>
+		<YoutubeIcon />
+	</a>
+	<a
 		href="https://medium.com/@k8603427"
 		target="_blank"
 		rel="noopener noreferrer"
-		title="All blog posts also go on Medium"
+		title="All blog posts go on Medium"
 	>
 		<MediumIcon />
 	</a>
-	<RssLink />
 	<a
-		href="mailto:prompt-dress@vomkonstant.in"
+		href="https://promptdress.substack.com/"
 		target="_blank"
 		rel="noopener noreferrer"
-		title="Send an email"
+		title="Subscribe to my newsletter"
 	>
 		<EmailIcon />
 	</a>

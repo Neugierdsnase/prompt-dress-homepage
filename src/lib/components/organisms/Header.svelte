@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Logo from '$lib/components/atoms/Logo.svelte';
-	import RssLink from '$lib/components/atoms/RssLink.svelte';
+	import Socials from '../molecules/Socials.svelte';
 
 	export let showBackground = false;
 </script>
@@ -10,10 +10,7 @@
 		<a class="logo" href="/" aria-label="Site logo">
 			<Logo />
 		</a>
-		<div class="links">
-			<a href="/blog">Blog</a>
-			<RssLink />
-		</div>
+		<Socials />
 	</nav>
 </header>
 
