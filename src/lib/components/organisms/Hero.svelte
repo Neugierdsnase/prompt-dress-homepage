@@ -1,21 +1,29 @@
-<script>
+<script lang="ts">
 	import DownloadIcon from '$lib/icons/download.svelte';
 	import Button from '$lib/components/atoms/Button.svelte';
-	import Sparkles from '../atoms/Sparkles.svelte';
 	import { detect } from 'detect-browser';
 	import ExternalLink from '$lib/icons/external-link.svelte';
 
+	const clamp = (num: number, min: number, max: number) => Math.min(Math.max(num, min), max);
 	const browser = detect();
 
 	const isChrome = browser?.name === 'chrome';
 	const isFirefox = browser?.name === 'firefox';
 	const isEdge = browser?.name === 'edge';
+
+	let offsetY = 0;
+
+	const handleScroll = () => {
+		let scrollY = window.scrollY;
+
+		offsetY = clamp(-1110, -(scrollY + 1) * 1.05, 0);
+	};
 </script>
 
+<svelte:window on:scroll={handleScroll} />
+
 <section id="hero">
-	<Sparkles>
-		<h1 class="hello">Prompt Dress</h1>
-	</Sparkles>
+	<h1 class="hello" style="transform: translateY({offsetY}px);">Prompt Dress</h1>
 	<p class="intro">
 		<span class="center">Organize your AI prompts<br />with ease and joy.</span>
 	</p>

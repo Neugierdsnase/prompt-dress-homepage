@@ -1,5 +1,4 @@
 <script>
-	import SparklingHighlight from '$lib/components/molecules/SparklingHighlight.svelte';
 	import Socials from '$lib/components/molecules/Socials.svelte';
 </script>
 
@@ -7,7 +6,7 @@
 	<div class="info">
 		<h2>
 			Your AI prompts are valuable.
-			<SparklingHighlight color="secondary">Cherish them.</SparklingHighlight>
+			<span class="highlight">Cherish them.</span>
 		</h2>
 		<p>
 			You spend a lot of time crafting AI prompts that get you just the right answers. Save them.
@@ -18,15 +17,17 @@
 			<Socials />
 		</div>
 	</div>
-	<iframe
-		width="560"
-		height="315"
-		src="https://www.youtube.com/embed/O8_oTEoj15Q?si=6tRTi2TxFD0Hnac4"
-		title="YouTube video player"
-		frameborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-		allowfullscreen
-	/>
+	<div class="video">
+		<iframe
+			width="560"
+			height="315"
+			src="https://www.youtube.com/embed/O8_oTEoj15Q?si=6tRTi2TxFD0Hnac4"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			allowfullscreen
+		/>
+	</div>
 </section>
 
 <style lang="scss">
@@ -34,26 +35,30 @@
 
 	#about {
 		position: relative;
-		display: grid;
-		grid-template-columns: 500px 250px;
-		align-items: center;
+		display: flex;
+		gap: 20px;
 		justify-content: space-between;
 		padding-bottom: 50px;
 
 		@include for-phone-only {
-			grid-template-columns: 1fr;
 			justify-items: center;
 			gap: 20px;
+			flex-direction: column;
 		}
 
 		.info {
 			display: flex;
 			flex-direction: column;
+			flex-shrink: 1;
 			gap: 10px;
 			h2 {
 				@include for-phone-only {
 					text-align: center;
 				}
+			}
+
+			.video {
+				flex-shrink: 0;
 			}
 
 			p {
@@ -80,5 +85,9 @@
 				}
 			}
 		}
+	}
+
+	.highlight {
+		color: var(--color--secondary);
 	}
 </style>

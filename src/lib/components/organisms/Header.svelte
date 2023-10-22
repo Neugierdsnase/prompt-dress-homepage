@@ -1,15 +1,19 @@
 <script lang="ts">
-	import Logo from '$lib/components/atoms/Logo.svelte';
 	import Socials from '../molecules/Socials.svelte';
 
-	export let showBackground = false;
+	let opacity = 0;
+
+	const handleScroll = () => {
+		const scrollY = window.scrollY;
+		opacity = scrollY / 200;
+	};
 </script>
 
-<header class:has-background={showBackground}>
+<svelte:window on:scroll={handleScroll} />
+
+<header style="background-color: rgba(var(--color--card-background-rgb), {opacity};">
 	<nav class="container">
-		<a class="logo" href="/" aria-label="Site logo">
-			<Logo />
-		</a>
+		<a class="logo" href="/" aria-label="Site logo" />
 		<Socials />
 	</nav>
 </header>
@@ -18,7 +22,8 @@
 	@import '$lib/scss/breakpoints.scss';
 
 	header {
-		position: relative;
+		position: sticky;
+		top: 0;
 		padding: 30px 0;
 
 		@include for-phone-only {
