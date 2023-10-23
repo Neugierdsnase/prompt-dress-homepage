@@ -1,6 +1,6 @@
 <div class="wrapper">
 	<h3>Keep up to date on the extensions development!</h3>
-	<h4>Subscribe to my newsletter</h4>
+	<h4>Subscribe to the newsletter</h4>
 
 	<iframe
 		title="Subscribe to Prompt Dress"

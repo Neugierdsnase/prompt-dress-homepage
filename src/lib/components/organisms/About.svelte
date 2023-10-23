@@ -1,8 +1,20 @@
 <script>
 	import Socials from '$lib/components/molecules/Socials.svelte';
+
+	let offsetY = 0;
+	const handleScroll = () => {
+		const scrollY = window.scrollY;
+		offsetY = scrollY * 0.2;
+	};
 </script>
 
-<section id="about">
+<svelte:window on:scroll={handleScroll} />
+
+<section
+	id="about"
+	class="cyber-razor-top cyber-razor-bottom"
+	style="transform: translateY({offsetY}px)"
+>
 	<div class="info">
 		<h2>
 			Your AI prompts are valuable.
@@ -37,8 +49,15 @@
 		position: relative;
 		display: flex;
 		gap: 20px;
+		background-color: var(--color--post-page-background);
 		justify-content: space-between;
-		padding-bottom: 50px;
+		padding: 30px 100vw;
+		margin: 80px -100vw 34vh;
+
+		&::before,
+		&::after {
+			background-color: var(--color--post-page-background);
+		}
 
 		@include for-phone-only {
 			justify-items: center;

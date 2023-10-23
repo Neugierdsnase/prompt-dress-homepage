@@ -31,7 +31,10 @@
 		Prompt Dress
 	</h1>
 	<p class="intro">
-		<span class="center">Organize your AI prompts<br />with ease and joy.</span>
+		<span class="center"
+			>Organize your AI prompts<br />with <span class="highlight">ease</span> and
+			<span class="highlight">joy.</span></span
+		>
 	</p>
 	<div class="ctas">
 		{#if isChrome}
