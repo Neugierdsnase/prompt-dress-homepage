@@ -1,7 +1,7 @@
 import { f as filteredPosts } from "../../../chunks/index2.js";
 const Features = [
   {
-    name: "<b>Free.<b/><br>No credit card required.<br>Not even an email address.",
+    name: "<b>Free.</b><br>No credit card required.<br>Not even an email address.",
     description: 'All features you see on this website are free and will remain so. If you want network or enterprise features, please <a href="mailto: prompt-dress@vomkonstant.in" target="_blank" /> contact me via email</a>.',
     image: "images/cyberpunk/coffee_small.png",
     tags: []

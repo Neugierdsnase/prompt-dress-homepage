@@ -1,79 +1,49 @@
-import { c as create_ssr_component, d as escape, b as add_attribute, o as onDestroy, e as each, v as validate_component, f as null_to_empty, i as is_void } from "../../../chunks/index.js";
+import { c as create_ssr_component, e as escape, v as validate_component, d as each, i as is_void } from "../../../chunks/index.js";
+import { D as Download } from "../../../chunks/download.js";
 import { B as Button } from "../../../chunks/Button.js";
+import { detect } from "detect-browser";
 import { S as Socials } from "../../../chunks/Socials.js";
+import { B as BlogPostCard, C as Card } from "../../../chunks/BlogPostCard.js";
+import { C as ContentSection, T as Tag } from "../../../chunks/ContentSection.js";
 import { I as Image } from "../../../chunks/Image.js";
-import { C as ContentSection, B as BlogPostCard, a as Card, T as Tag } from "../../../chunks/ContentSection.js";
-const Learning = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<svg width="100%" height="100%" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor"><path d="M6.818 22v-2.857C6.52 16.166 3 14.572 3 10c0-4.57 2.727-8.056 8.182-8 3.927.042 7.636 2.286 7.636 6.858L21 12.286c0 2.286-2.182 2.286-2.182 2.286s.546 5.714-4.364 5.714V22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 12a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 13a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.3 2"></path></svg>`;
-});
-const Download = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<svg width="100%" height="100%" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 20L18 20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 4V16M12 16L15.5 12.5M12 16L8.5 12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>`;
-});
-const SingleSparkle_svelte_svelte_type_style_lang = "";
-const css$9 = {
-  code: ".wrapper.svelte-1rrd21n{position:absolute;display:flex;pointer-events:none;z-index:2;filter:blur(2px);animation:svelte-1rrd21n-grow-and-shrink 1500ms ease-in-out forwards}@keyframes svelte-1rrd21n-grow-and-shrink{0%{transform:scale(0)}50%{transform:scale(1)}100%{transform:scale(0)}}",
+const css$7 = {
+  code: ".wrapper.svelte-jykq4w{text-align:center;margin:2vw auto}",
   map: null
 };
-const SingleSparkle = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let { color } = $$props;
-  let { size } = $$props;
-  let { offset } = $$props;
-  if ($$props.color === void 0 && $$bindings.color && color !== void 0)
-    $$bindings.color(color);
-  if ($$props.size === void 0 && $$bindings.size && size !== void 0)
-    $$bindings.size(size);
-  if ($$props.offset === void 0 && $$bindings.offset && offset !== void 0)
-    $$bindings.offset(offset);
-  $$result.css.add(css$9);
-  return `<div class="wrapper svelte-1rrd21n" style="${"top: " + escape(offset.top - 10, true) + "; left: " + escape(offset.left, true) + ";"}"><svg${add_attribute("width", size, 0)}${add_attribute("height", size, 0)} viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M80 0C80 0 84.2846 41.2925 101.496 58.504C118.707 75.7154 160 80 160 80C160 80 118.707 84.2846 101.496 101.496C84.2846 118.707 80 160 80 160C80 160 75.7154 118.707 58.504 101.496C41.2925 84.2846 0 80 0 80C0 80 41.2925 75.7154 58.504 58.504C75.7154 41.2925 80 0 80 0Z"${add_attribute("fill", color, 0)}></path></svg></div>`;
+const NewsletterSection = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  $$result.css.add(css$7);
+  return `<div class="wrapper svelte-jykq4w"><h3>Keep up to date on the extensions development!</h3>
+	<h4>Subscribe to the newsletter</h4>
+	<iframe title="Subscribe to Prompt Dress" src="https://promptdress.substack.com/embed" width="480" height="150" frameborder="0" scrolling="no"></iframe></div>`;
 });
-const Sparkles_svelte_svelte_type_style_lang = "";
-const css$8 = {
-  code: ".sparkle-wrapper.svelte-exdx8u.svelte-exdx8u{position:relative;display:inline-block}.sparkle-wrapper.svelte-exdx8u .slot-wrapper.svelte-exdx8u{position:relative;z-index:1}",
-  map: null
-};
-const Sparkles = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let { color = "default" } = $$props;
-  let sparkles = [];
-  let sparklesInterval;
-  onDestroy(() => {
-    clearInterval(sparklesInterval);
-  });
-  if ($$props.color === void 0 && $$bindings.color && color !== void 0)
-    $$bindings.color(color);
-  $$result.css.add(css$8);
-  return `<div class="sparkle-wrapper svelte-exdx8u">${each(sparkles, (sparkle) => {
-    return `${validate_component(SingleSparkle, "Sparkle").$$render(
-      $$result,
-      {
-        color: sparkle.color,
-        size: String(sparkle.size),
-        offset: sparkle.style
-      },
-      {},
-      {}
-    )}`;
-  })}
-	<span class="slot-wrapper svelte-exdx8u">${slots.default ? slots.default({}) : ``}</span>
-</div>`;
+const External_link = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<svg width="100%" height="100%" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 12H19M19 12L16 15M19 12L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19 6V5C19 3.89543 18.1046 3 17 3H7C5.89543 3 5 3.89543 5 5V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>`;
 });
 const Hero_svelte_svelte_type_style_lang = "";
-const css$7 = {
+const css$6 = {
   code: "#hero.svelte-145iwr0.svelte-145iwr0{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:15px;position:relative;padding:80px 0}@media(max-width: 767px){#hero.svelte-145iwr0.svelte-145iwr0{padding:40px 0 50px}}#hero.svelte-145iwr0 .hello.svelte-145iwr0{text-align:center}#hero.svelte-145iwr0 .intro.svelte-145iwr0{font-weight:500;font-size:1.4rem;width:min(100%, 440px);display:flex;flex-direction:column}#hero.svelte-145iwr0 .intro .center.svelte-145iwr0{text-align:center}@media(max-width: 767px){#hero.svelte-145iwr0 .intro.svelte-145iwr0{display:none}}#hero.svelte-145iwr0 .ctas.svelte-145iwr0{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;width:100%}",
   map: null
 };
 const Hero = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css$7);
-  return `<section id="hero" class="svelte-145iwr0">${validate_component(Sparkles, "Sparkles").$$render($$result, {}, {}, {
-    default: () => {
-      return `<h1 class="hello svelte-145iwr0">Prompt Dress</h1>`;
-    }
-  })}
-	<p class="intro svelte-145iwr0"><span class="center svelte-145iwr0">Organize your AI prompts<br>with ease and joy.</span></p>
-	<div class="ctas svelte-145iwr0">${validate_component(Button, "Button").$$render(
+  const browser = detect();
+  const isChrome = browser?.name === "chrome";
+  const isFirefox = browser?.name === "firefox";
+  const isEdge = browser?.name === "edge";
+  let offsetY = 0;
+  let scale = 1;
+  let opacity = 1;
+  $$result.css.add(css$6);
+  return `
+
+
+<section id="hero" class="svelte-145iwr0"><h1 class="hello svelte-145iwr0" style="${"transform: translateY(" + escape(offsetY, true) + "px) scale(" + escape(scale, true) + "); opacity: " + escape(opacity, true)}">Prompt Dress
+	</h1>
+	<p class="intro svelte-145iwr0"><span class="center svelte-145iwr0">Organize your AI prompts<br>with <span class="highlight">ease</span> and
+			<span class="highlight">joy.</span></span></p>
+	<div class="ctas svelte-145iwr0">${isChrome ? `${validate_component(Button, "Button").$$render(
     $$result,
     {
-      href: "https://chrome.google.com/webstore/detail/prompt-dress/mpcinhhegdohpapgmiopjlfhemhhfmid"
+      href: "https://bit.ly/website-chrome-web-store"
     },
     {},
     {
@@ -82,67 +52,65 @@ const Hero = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       },
       default: () => {
         return `Download for Chrome
-		`;
+			`;
       }
     }
-  )}
-		${validate_component(Button, "Button").$$render($$result, { color: "primary", href: "/blog" }, {}, {
+  )}` : ``}
+		${isFirefox ? `${validate_component(Button, "Button").$$render($$result, { href: "/firefox-coming-soon" }, {}, {
     icon: () => {
-      return `${validate_component(Learning, "LearningIcon").$$render($$result, { slot: "icon" }, {}, {})}`;
+      return `${validate_component(Download, "DownloadIcon").$$render($$result, { slot: "icon" }, {}, {})}`;
     },
     default: () => {
-      return `Learn about AI prompting
+      return `It&#39;s coming soon for Firefox, stay tuned!
+			`;
+    }
+  })}` : ``}
+		${isEdge ? `${validate_component(Button, "Button").$$render(
+    $$result,
+    {
+      href: "https://bit.ly/website-chrome-web-store"
+    },
+    {},
+    {
+      icon: () => {
+        return `${validate_component(Download, "DownloadIcon").$$render($$result, { slot: "icon" }, {}, {})}`;
+      },
+      default: () => {
+        return `Download for Edge
+			`;
+      }
+    }
+  )}` : ``}
+		${validate_component(Button, "Button").$$render($$result, { href: "/download-extension" }, {}, {
+    icon: () => {
+      return `${validate_component(External_link, "ExternalLink").$$render($$result, { slot: "icon" }, {}, {})}`;
+    },
+    default: () => {
+      return `See all download options
 		`;
     }
   })}</div>
 </section>`;
 });
-const SparklingHighlight_svelte_svelte_type_style_lang = "";
-const css$6 = {
-  code: "strong.primary.svelte-8f8x6d{color:var(--color--primary)}strong.secondary.svelte-8f8x6d{color:var(--color--secondary)}",
-  map: null
-};
-const SparklingHighlight = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let { color = "default" } = $$props;
-  let { sparkleColor = "default" } = $$props;
-  if ($$props.color === void 0 && $$bindings.color && color !== void 0)
-    $$bindings.color(color);
-  if ($$props.sparkleColor === void 0 && $$bindings.sparkleColor && sparkleColor !== void 0)
-    $$bindings.sparkleColor(sparkleColor);
-  $$result.css.add(css$6);
-  return `${validate_component(Sparkles, "Sparkles").$$render($$result, { color: sparkleColor }, {}, {
-    default: () => {
-      return `<strong class="${escape(null_to_empty(color), true) + " svelte-8f8x6d"}">${slots.default ? slots.default({}) : ``}</strong>`;
-    }
-  })}`;
-});
 const About_svelte_svelte_type_style_lang = "";
 const css$5 = {
-  code: "#about.svelte-1qp99xm.svelte-1qp99xm{position:relative;display:grid;grid-template-columns:500px 250px;align-items:center;justify-content:space-between;padding-bottom:50px}@media(max-width: 767px){#about.svelte-1qp99xm.svelte-1qp99xm{grid-template-columns:1fr;justify-items:center;gap:20px}}#about.svelte-1qp99xm .info.svelte-1qp99xm{display:flex;flex-direction:column;gap:10px}@media(max-width: 767px){#about.svelte-1qp99xm .info h2.svelte-1qp99xm{text-align:center}}@media(max-width: 767px){#about.svelte-1qp99xm .info p.svelte-1qp99xm{text-align:justify}}@media(max-width: 767px){#about.svelte-1qp99xm .info.svelte-1qp99xm{gap:20px}}#about.svelte-1qp99xm .socials.svelte-1qp99xm{display:flex;align-items:center;gap:15px}@media(max-width: 767px){#about.svelte-1qp99xm .socials.svelte-1qp99xm{justify-content:center;margin-bottom:10px}#about.svelte-1qp99xm .socials span.svelte-1qp99xm{display:none}}#about.svelte-1qp99xm .image.svelte-1qp99xm{width:220px;height:220px}",
+  code: "#about.svelte-1fg2yxq.svelte-1fg2yxq{position:relative;display:flex;gap:20px;background-color:var(--color--post-page-background);justify-content:space-between;padding:30px 100vw;margin:80px -100vw 34vh}#about.svelte-1fg2yxq.svelte-1fg2yxq::before,#about.svelte-1fg2yxq.svelte-1fg2yxq::after{background-color:var(--color--post-page-background)}@media(max-width: 767px){#about.svelte-1fg2yxq.svelte-1fg2yxq{justify-items:center;gap:20px;flex-direction:column}}#about.svelte-1fg2yxq .info.svelte-1fg2yxq{display:flex;flex-direction:column;flex-shrink:1;gap:10px}@media(max-width: 767px){#about.svelte-1fg2yxq .info h2.svelte-1fg2yxq{text-align:center}}#about.svelte-1fg2yxq .info .video.svelte-1fg2yxq{flex-shrink:0}@media(max-width: 767px){#about.svelte-1fg2yxq .info p.svelte-1fg2yxq{text-align:justify}}@media(max-width: 767px){#about.svelte-1fg2yxq .info.svelte-1fg2yxq{gap:20px}}#about.svelte-1fg2yxq .socials.svelte-1fg2yxq{display:flex;align-items:center;gap:15px}@media(max-width: 767px){#about.svelte-1fg2yxq .socials.svelte-1fg2yxq{justify-content:center;margin-bottom:10px}#about.svelte-1fg2yxq .socials span.svelte-1fg2yxq{display:none}}.highlight.svelte-1fg2yxq.svelte-1fg2yxq{color:var(--color--secondary)}",
   map: null
 };
 const About = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let offsetY = 0;
   $$result.css.add(css$5);
-  return `<section id="about" class="svelte-1qp99xm"><div class="info svelte-1qp99xm"><h2 class="svelte-1qp99xm">Your AI prompts are valuable.
-			${validate_component(SparklingHighlight, "SparklingHighlight").$$render($$result, { color: "secondary" }, {}, {
-    default: () => {
-      return `Cherish them.`;
-    }
-  })}</h2>
-		<p class="svelte-1qp99xm">You spend a lot of time crafting AI prompts that get you just the right answers. Save them.
+  return `
+
+
+<section id="about" class="cyber-razor-top cyber-razor-bottom svelte-1fg2yxq" style="${"transform: translateY(" + escape(offsetY, true) + "px)"}"><div class="info svelte-1fg2yxq"><h2 class="svelte-1fg2yxq">Your AI prompts are valuable.
+			<span class="highlight svelte-1fg2yxq">Cherish them.</span></h2>
+		<p class="svelte-1fg2yxq">You spend a lot of time crafting AI prompts that get you just the right answers. Save them.
 			Organize them neatly. Reuse them with a single click.
 		</p>
-		<div class="socials svelte-1qp99xm"><span class="svelte-1qp99xm">Socials:</span>
+		<div class="socials svelte-1fg2yxq"><span class="svelte-1fg2yxq">Socials:</span>
 			${validate_component(Socials, "Socials").$$render($$result, {}, {}, {})}</div></div>
-	<a href="https://chrome.google.com/webstore/detail/prompt-dress/mpcinhhegdohpapgmiopjlfhemhhfmid" rel="noopener" target="_blank"><div class="image svelte-1qp99xm">${validate_component(Image, "Image").$$render(
-    $$result,
-    {
-      src: "/images/logos/logo_large.png",
-      alt: "Sample for the static template"
-    },
-    {},
-    {}
-  )}</div></a>
+	<div class="video svelte-1fg2yxq"><iframe width="560" height="315" src="https://www.youtube.com/embed/O8_oTEoj15Q?si=6tRTi2TxFD0Hnac4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
 </section>`;
 });
 const RecentPosts_svelte_svelte_type_style_lang = "";
@@ -280,7 +248,7 @@ const Quote = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 });
 const SocialProofCard_svelte_svelte_type_style_lang = "";
 const css$1 = {
-  code: ".social-proof-card.svelte-1eieqao{position:relative;flex-shrink:0;display:flex;gap:20px;width:400px;padding:20px;justify-content:space-between;align-items:end;border-radius:10px;background-color:var(--color--post-page-background)}.quote-icon.svelte-1eieqao{position:absolute;top:-20px;left:-20px;height:80px;width:80px;z-index:1;opacity:0.2;color:var(--color--secondary);filter:drop-shadow(0px 0px 3px var(--color--secondary-shade))}.image.svelte-1eieqao{flex-shrink:0;flex-grow:0;width:80px;height:80px;max-width:80px;max-height:80px;border-radius:50%;overflow:hidden}.content.svelte-1eieqao{display:flex;flex-direction:column;gap:5px;height:100%;justify-content:space-between}.quote.svelte-1eieqao{font-size:0.9rem;font-weight:400}.name.svelte-1eieqao{font-size:0.8rem;font-weight:700}.position.svelte-1eieqao{font-size:0.8rem;font-weight:400;font-style:italic}",
+  code: ".social-proof-card.svelte-4gkii{position:relative;flex-shrink:0;display:flex;gap:20px;width:400px;padding:20px;justify-content:space-between;align-items:end;border-radius:10px;background-color:var(--color--post-page-background)}@media(max-width: 767px){.social-proof-card.svelte-4gkii{width:100%;margin:0px 16px}}.quote-icon.svelte-4gkii{position:absolute;top:-20px;left:-20px;height:80px;width:80px;z-index:1;opacity:0.2;color:var(--color--secondary);filter:drop-shadow(0px 0px 3px var(--color--secondary-shade))}.image.svelte-4gkii{flex-shrink:0;flex-grow:0;width:80px;height:80px;max-width:80px;max-height:80px;border-radius:50%;overflow:hidden}.content.svelte-4gkii{display:flex;flex-direction:column;gap:5px;height:100%;justify-content:space-between}.quote.svelte-4gkii{font-size:0.9rem;font-weight:400}.name.svelte-4gkii{font-size:0.8rem;font-weight:700}.position.svelte-4gkii{font-size:0.8rem;font-weight:400;font-style:italic}",
   map: null
 };
 const SocialProofCard = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -301,8 +269,8 @@ const SocialProofCard = create_ssr_component(($$result, $$props, $$bindings, slo
     $$bindings.as(as);
   $$result.css.add(css$1);
   return `${((tag) => {
-    return tag ? `<${as} class="social-proof-card svelte-1eieqao">${is_void(tag) ? "" : `<div class="quote-icon svelte-1eieqao">${validate_component(Quote, "QuoteIcon").$$render($$result, {}, {}, {})}</div>
-	<div class="image svelte-1eieqao">${validate_component(Image, "Image").$$render(
+    return tag ? `<${as} class="social-proof-card svelte-4gkii">${is_void(tag) ? "" : `<div class="quote-icon svelte-4gkii">${validate_component(Quote, "QuoteIcon").$$render($$result, {}, {}, {})}</div>
+	<div class="image svelte-4gkii">${validate_component(Image, "Image").$$render(
       $$result,
       {
         src: image,
@@ -311,9 +279,9 @@ const SocialProofCard = create_ssr_component(($$result, $$props, $$bindings, slo
       {},
       {}
     )}</div>
-	<div class="content svelte-1eieqao"><p class="quote svelte-1eieqao">${escape(quote)}</p>
-		<div><p class="name svelte-1eieqao">${escape(name)}</p>
-			<p class="position svelte-1eieqao"><!-- HTML_TAG_START -->${position}<!-- HTML_TAG_END --></p></div></div>`}${is_void(tag) ? "" : `</${tag}>`}` : "";
+	<div class="content svelte-4gkii"><p class="quote svelte-4gkii">${escape(quote)}</p>
+		<div><p class="name svelte-4gkii">${escape(name)}</p>
+			<p class="position svelte-4gkii"><!-- HTML_TAG_START -->${position}<!-- HTML_TAG_END --></p></div></div>`}${is_void(tag) ? "" : `</${tag}>`}` : "";
   })(as)}`;
 });
 const SocialProofSection_svelte_svelte_type_style_lang = "";
@@ -338,9 +306,11 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.data(data);
   return `<div class="container">${validate_component(Hero, "Hero").$$render($$result, {}, {}, {})}
 	${validate_component(About, "About").$$render($$result, {}, {}, {})}
+	${validate_component(NewsletterSection, "NewsletterSection").$$render($$result, {}, {}, {})}
 	${validate_component(Features, "Features").$$render($$result, { features }, {}, {})}
 	${posts && posts.length > 0 ? `${validate_component(RecentPosts, "RecentPosts").$$render($$result, { posts }, {}, {})}` : ``}
-	${validate_component(SocialProofSection, "SocialProofSection").$$render($$result, { socialProofs }, {}, {})}</div>`;
+	${validate_component(SocialProofSection, "SocialProofSection").$$render($$result, { socialProofs }, {}, {})}
+	${validate_component(NewsletterSection, "NewsletterSection").$$render($$result, {}, {}, {})}</div>`;
 });
 export {
   Page as default

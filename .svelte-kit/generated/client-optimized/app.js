@@ -11,19 +11,27 @@ export const nodes = [
 	() => import('./nodes/7'),
 	() => import('./nodes/8'),
 	() => import('./nodes/9'),
-	() => import('./nodes/10')
+	() => import('./nodes/10'),
+	() => import('./nodes/11'),
+	() => import('./nodes/12'),
+	() => import('./nodes/13'),
+	() => import('./nodes/14')
 ];
 
 export const server_loads = [2];
 
 export const dictionary = {
-		"/(waves)": [~8,[3]],
-		"/(waves)/404": [9,[3]],
+		"/(waves)": [~10,[3]],
+		"/(waves)/404": [11,[3]],
 		"/(blog-article)/blog-posts": [4,[2]],
-		"/(waves)/blog": [~10,[3]],
+		"/(waves)/blog": [~12,[3]],
 		"/(blog-article)/customization": [5,[2]],
+		"/(waves)/privacy-policy": [13,[3]],
 		"/(blog-article)/project-structure": [6,[2]],
-		"/(blog-article)/prompt-engineering-basics": [7,[2]]
+		"/(blog-article)/prompt-engineering-basics": [7,[2]],
+		"/(blog-article)/prompt-engineering-for-language-learners": [8,[2]],
+		"/(blog-article)/prompt-engineering-for-real-estate-listings": [9,[2]],
+		"/(waves)/support": [14,[3]]
 	};
 
 export const hooks = {

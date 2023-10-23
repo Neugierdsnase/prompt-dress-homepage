@@ -1,46 +1,46 @@
-import { c as create_ssr_component, v as validate_component, e as each, b as add_attribute, d as escape } from "../../../chunks/index.js";
+import { c as create_ssr_component, v as validate_component, b as add_attribute, e as escape, d as each } from "../../../chunks/index.js";
 import { H as Header, F as Footer } from "../../../chunks/Footer.js";
-import { C as ContentSection, B as BlogPostCard, T as Tag } from "../../../chunks/ContentSection.js";
+import { C as ContentSection, T as Tag } from "../../../chunks/ContentSection.js";
 import dateformat from "dateformat";
 import { k as keywords, s as siteBaseUrl, t as title } from "../../../chunks/meta.js";
 import { I as Image } from "../../../chunks/Image.js";
-const RelatedPosts_svelte_svelte_type_style_lang = "";
+import { D as Download } from "../../../chunks/download.js";
+import { B as Button } from "../../../chunks/Button.js";
+const DownloadExtension_svelte_svelte_type_style_lang = "";
 const css$1 = {
-  code: ".simple-grid.svelte-ypk0wh{width:100%;display:grid;grid-template-columns:1fr 1fr 1fr;grid-gap:20px}@media(max-width: 1070px){.simple-grid.svelte-ypk0wh{grid-template-columns:1fr 1fr}}@media(max-width: 900px){.simple-grid.svelte-ypk0wh{grid-template-columns:1fr}}",
+  code: "h4.svelte-13pccfr,p.svelte-13pccfr{width:400px}.container.svelte-13pccfr{position:relative;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 100vw 25vh;margin:0 -100vw -25vh;gap:2rem;background:url(/images/cyberpunk/pattern3.png), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--color--post-page-background) 70%);background-blend-mode:luminosity}",
   map: null
 };
-const RelatedPosts = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let { posts } = $$props;
-  if ($$props.posts === void 0 && $$bindings.posts && posts !== void 0)
-    $$bindings.posts(posts);
+const DownloadExtension = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css$1);
-  return `${validate_component(ContentSection, "ContentSection").$$render(
-    $$result,
-    {
-      id: "related-posts",
-      title: "Related Posts"
-    },
-    {},
-    {
-      default: () => {
-        return `<div class="simple-grid svelte-ypk0wh">${each(posts, (post) => {
-          return `${validate_component(BlogPostCard, "BlogPostCard").$$render(
-            $$result,
-            {
-              slug: post.slug,
-              title: post.title,
-              excerpt: post.excerpt,
-              tags: post.tags,
-              readingTime: post.readingTime,
-              showImage: false
-            },
-            {},
-            {}
-          )}`;
-        })}</div>`;
-      }
+  return `${validate_component(ContentSection, "ContentSection").$$render($$result, {}, {}, {
+    default: () => {
+      return `<div class="container svelte-13pccfr"><h4 class="svelte-13pccfr">Ready to take your prompts to the next level?</h4>
+		<p class="svelte-13pccfr">Get the
+			<a href="https://bit.ly/website-chrome-web-store" target="_blank" rel="noopener">Prompt Dress browser extension for Chrome here and interact with AIs like a pro!
+			</a></p>
+		${validate_component(Button, "Button").$$render(
+        $$result,
+        {
+          size: "large",
+          tag: "a",
+          href: "https://bit.ly/website-chrome-web-store",
+          target: "_blank",
+          rel: "noopener"
+        },
+        {},
+        {
+          icon: () => {
+            return `${validate_component(Download, "DownloadIcon").$$render($$result, { slot: "icon" }, {}, {})}`;
+          },
+          default: () => {
+            return `Download
+		`;
+          }
+        }
+      )}</div>`;
     }
-  )}`;
+  })}`;
 });
 const _layout_svelte_svelte_type_style_lang = "";
 const css = {
@@ -94,7 +94,7 @@ const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   })}</div>` : ``}` : ``}</div>
 			${post && post.coverImage ? `<div class="cover-image svelte-d0vull">${validate_component(Image, "Image").$$render($$result, { src: post.coverImage, alt: post.title }, {}, {})}</div>` : ``}
 			<div class="content svelte-d0vull">${slots.default ? slots.default({}) : ``}</div></article>
-		${post.relatedPosts && post.relatedPosts.length > 0 ? `<div class="container">${validate_component(RelatedPosts, "RelatedPosts").$$render($$result, { posts: post.relatedPosts }, {}, {})}</div>` : ``}</main>
+		<div class="container">${validate_component(DownloadExtension, "DownloadExtension").$$render($$result, {}, {}, {})}</div></main>
 	${validate_component(Footer, "Footer").$$render($$result, {}, {}, {})}
 </div>`;
 });

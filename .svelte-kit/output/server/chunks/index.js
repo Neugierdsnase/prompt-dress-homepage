@@ -27,9 +27,6 @@ function compute_slots(slots) {
   }
   return result;
 }
-function null_to_empty(value) {
-  return value == null ? "" : value;
-}
 let current_component;
 function set_current_component(component) {
   current_component = component;
@@ -38,9 +35,6 @@ function get_current_component() {
   if (!current_component)
     throw new Error("Function called outside component initialization");
   return current_component;
-}
-function onDestroy(fn) {
-  get_current_component().$$.on_destroy.push(fn);
 }
 function setContext(key, context) {
   get_current_component().$$.context.set(key, context);
@@ -230,18 +224,16 @@ export {
   setContext as a,
   add_attribute as b,
   create_ssr_component as c,
-  escape as d,
-  each as e,
-  null_to_empty as f,
-  compute_rest_props as g,
-  spread as h,
+  each as d,
+  escape as e,
+  compute_rest_props as f,
+  spread as g,
+  escape_object as h,
   is_void as i,
-  escape_object as j,
-  escape_attribute_value as k,
-  compute_slots as l,
+  escape_attribute_value as j,
+  compute_slots as k,
   missing_component as m,
   noop as n,
-  onDestroy as o,
   safe_not_equal as s,
   validate_component as v
 };

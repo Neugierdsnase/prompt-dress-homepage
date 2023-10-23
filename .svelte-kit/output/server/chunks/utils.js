@@ -2,12 +2,14 @@ import { _ as __vite_glob_0_0 } from "./_page.js";
 import { _ as __vite_glob_0_1 } from "./_page2.js";
 import { _ as __vite_glob_0_2 } from "./_page3.js";
 import { _ as __vite_glob_0_3 } from "./_page4.js";
+import { _ as __vite_glob_0_4 } from "./_page5.js";
+import { _ as __vite_glob_0_5 } from "./_page6.js";
 import "prismjs";
 import "prism-svelte";
 import readingTime from "reading-time/lib/reading-time.js";
 import striptags from "striptags";
 const importPosts = (render = false) => {
-  const blogImports = /* @__PURE__ */ Object.assign({ "/src/routes/(blog-article)/blog-posts/+page.md": __vite_glob_0_0, "/src/routes/(blog-article)/customization/+page.md": __vite_glob_0_1, "/src/routes/(blog-article)/project-structure/+page.md": __vite_glob_0_2, "/src/routes/(blog-article)/prompt-engineering-basics/+page.md": __vite_glob_0_3 });
+  const blogImports = /* @__PURE__ */ Object.assign({ "/src/routes/(blog-article)/blog-posts/+page.md": __vite_glob_0_0, "/src/routes/(blog-article)/customization/+page.md": __vite_glob_0_1, "/src/routes/(blog-article)/project-structure/+page.md": __vite_glob_0_2, "/src/routes/(blog-article)/prompt-engineering-basics/+page.md": __vite_glob_0_3, "/src/routes/(blog-article)/prompt-engineering-for-language-learners/+page.md": __vite_glob_0_4, "/src/routes/(blog-article)/prompt-engineering-for-real-estate-listings/+page.md": __vite_glob_0_5 });
   const innerImports = /* @__PURE__ */ Object.assign({});
   const imports = { ...blogImports, ...innerImports };
   const posts = [];

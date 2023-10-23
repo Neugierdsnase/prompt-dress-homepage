@@ -1,9 +1,6 @@
 const prerender = true;
-const csr = false;
-const load = async () => {
-};
+const csr = true;
 export {
   csr,
-  load,
   prerender
 };
