@@ -1,4 +1,4 @@
-import { c as create_ssr_component, e as escape, b as add_attribute, k as compute_slots } from "./index.js";
+import { c as create_ssr_component, e as escape, b as add_attribute, j as compute_slots } from "./index.js";
 const Tag_svelte_svelte_type_style_lang = "";
 const css$1 = {
   code: ".tag.svelte-1xh8qlg{display:flex;align-items:center;justify-content:center;gap:5px;padding:5px 15px;border-radius:10px;font-weight:500;font-size:0.85rem;width:fit-content;white-space:nowrap}.tag.primary.svelte-1xh8qlg{background-color:var(--color--primary-tint);color:var(--color--primary)}.tag.secondary.svelte-1xh8qlg{background-color:var(--color--secondary-tint);color:var(--color--secondary)}",

@@ -1,12 +1,11 @@
 import { c as create_ssr_component, e as escape, v as validate_component, d as each, i as is_void } from "../../../chunks/index.js";
-import { D as Download } from "../../../chunks/download.js";
-import { B as Button } from "../../../chunks/Button.js";
-import { detect } from "detect-browser";
+import { D as Downloads } from "../../../chunks/Downloads.js";
 import { S as Socials } from "../../../chunks/Socials.js";
 import { B as BlogPostCard, C as Card } from "../../../chunks/BlogPostCard.js";
 import { C as ContentSection, T as Tag } from "../../../chunks/ContentSection.js";
+import { B as Button } from "../../../chunks/Button.js";
 import { I as Image } from "../../../chunks/Image.js";
-const css$7 = {
+/* empty css                                                               */const css$7 = {
   code: ".wrapper.svelte-jykq4w{text-align:center;margin:2vw auto}",
   map: null
 };
@@ -16,19 +15,12 @@ const NewsletterSection = create_ssr_component(($$result, $$props, $$bindings, s
 	<h4>Subscribe to the newsletter</h4>
 	<iframe title="Subscribe to Prompt Dress" src="https://promptdress.substack.com/embed" width="480" height="150" frameborder="0" scrolling="no"></iframe></div>`;
 });
-const External_link = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<svg width="100%" height="100%" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 12H19M19 12L16 15M19 12L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19 6V5C19 3.89543 18.1046 3 17 3H7C5.89543 3 5 3.89543 5 5V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>`;
-});
 const Hero_svelte_svelte_type_style_lang = "";
 const css$6 = {
-  code: "#hero.svelte-145iwr0.svelte-145iwr0{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:15px;position:relative;padding:80px 0}@media(max-width: 767px){#hero.svelte-145iwr0.svelte-145iwr0{padding:40px 0 50px}}#hero.svelte-145iwr0 .hello.svelte-145iwr0{text-align:center}#hero.svelte-145iwr0 .intro.svelte-145iwr0{font-weight:500;font-size:1.4rem;width:min(100%, 440px);display:flex;flex-direction:column}#hero.svelte-145iwr0 .intro .center.svelte-145iwr0{text-align:center}@media(max-width: 767px){#hero.svelte-145iwr0 .intro.svelte-145iwr0{display:none}}#hero.svelte-145iwr0 .ctas.svelte-145iwr0{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;width:100%}",
+  code: "#hero.svelte-xzvpma.svelte-xzvpma{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:15px;position:relative;padding:80px 0}@media(max-width: 767px){#hero.svelte-xzvpma.svelte-xzvpma{padding:40px 0 50px}}#hero.svelte-xzvpma .hello.svelte-xzvpma{text-align:center}#hero.svelte-xzvpma .intro.svelte-xzvpma{font-weight:500;font-size:1.4rem;width:min(100%, 440px);display:flex;flex-direction:column}#hero.svelte-xzvpma .intro .center.svelte-xzvpma{text-align:center}@media(max-width: 767px){#hero.svelte-xzvpma .intro.svelte-xzvpma{display:none}}",
   map: null
 };
 const Hero = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  const browser = detect();
-  const isChrome = browser?.name === "chrome";
-  const isFirefox = browser?.name === "firefox";
-  const isEdge = browser?.name === "edge";
   let offsetY = 0;
   let scale = 1;
   let opacity = 1;
@@ -36,60 +28,11 @@ const Hero = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `
 
 
-<section id="hero" class="svelte-145iwr0"><h1 class="hello svelte-145iwr0" style="${"transform: translateY(" + escape(offsetY, true) + "px) scale(" + escape(scale, true) + "); opacity: " + escape(opacity, true)}">Prompt Dress
+<section id="hero" class="svelte-xzvpma"><h1 class="hello svelte-xzvpma" style="${"transform: translateY(" + escape(offsetY, true) + "px) scale(" + escape(scale, true) + "); opacity: " + escape(opacity, true)}">Prompt Dress
 	</h1>
-	<p class="intro svelte-145iwr0"><span class="center svelte-145iwr0">Organize your AI prompts<br>with <span class="highlight">ease</span> and
+	<p class="intro svelte-xzvpma"><span class="center svelte-xzvpma">Organize your AI prompts<br>with <span class="highlight">ease</span> and
 			<span class="highlight">joy.</span></span></p>
-	<div class="ctas svelte-145iwr0">${isChrome ? `${validate_component(Button, "Button").$$render(
-    $$result,
-    {
-      href: "https://bit.ly/website-chrome-web-store"
-    },
-    {},
-    {
-      icon: () => {
-        return `${validate_component(Download, "DownloadIcon").$$render($$result, { slot: "icon" }, {}, {})}`;
-      },
-      default: () => {
-        return `Download for Chrome
-			`;
-      }
-    }
-  )}` : ``}
-		${isFirefox ? `${validate_component(Button, "Button").$$render($$result, { href: "/firefox-coming-soon" }, {}, {
-    icon: () => {
-      return `${validate_component(Download, "DownloadIcon").$$render($$result, { slot: "icon" }, {}, {})}`;
-    },
-    default: () => {
-      return `It&#39;s coming soon for Firefox, stay tuned!
-			`;
-    }
-  })}` : ``}
-		${isEdge ? `${validate_component(Button, "Button").$$render(
-    $$result,
-    {
-      href: "https://bit.ly/website-chrome-web-store"
-    },
-    {},
-    {
-      icon: () => {
-        return `${validate_component(Download, "DownloadIcon").$$render($$result, { slot: "icon" }, {}, {})}`;
-      },
-      default: () => {
-        return `Download for Edge
-			`;
-      }
-    }
-  )}` : ``}
-		${validate_component(Button, "Button").$$render($$result, { href: "/download-extension" }, {}, {
-    icon: () => {
-      return `${validate_component(External_link, "ExternalLink").$$render($$result, { slot: "icon" }, {}, {})}`;
-    },
-    default: () => {
-      return `See all download options
-		`;
-    }
-  })}</div>
+	${validate_component(Downloads, "Downloads").$$render($$result, { showOnlyUsedBrowser: true }, {}, {})}
 </section>`;
 });
 const About_svelte_svelte_type_style_lang = "";
@@ -306,6 +249,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.data(data);
   return `<div class="container">${validate_component(Hero, "Hero").$$render($$result, {}, {}, {})}
 	${validate_component(About, "About").$$render($$result, {}, {}, {})}
+	
 	${validate_component(NewsletterSection, "NewsletterSection").$$render($$result, {}, {}, {})}
 	${validate_component(Features, "Features").$$render($$result, { features }, {}, {})}
 	${posts && posts.length > 0 ? `${validate_component(RecentPosts, "RecentPosts").$$render($$result, { posts }, {}, {})}` : ``}

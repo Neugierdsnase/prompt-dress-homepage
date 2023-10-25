@@ -133,7 +133,7 @@ const options = {
   root: Root,
   service_worker: false,
   templates: {
-    app: ({ head, body, assets: assets2, nonce, env }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n\n		<!-- Favicon -->\n		<link rel="manifest" href="' + assets2 + '/favicons/site.webmanifest" />\n		<link rel="icon" href="' + assets2 + '/favicons/icon48.png" />\n\n		<!-- Tell browser this site is responsive -->\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		<!-- Tell browser this site supports only dark mode -->\n		<meta name="color-scheme" content="dark" />\n		<!-- Color for browser url bar in mobile/Safari -->\n		<meta name="theme-color" content="#f500ff" />\n		<!-- Disable Google FLOC -->\n		<meta http-equiv="Permissions-Policy" content="interest-cohort=()" />\n\n		' + head + '\n	</head>\n\n	<body data-sveltekit-preload-data="hover">\n		<script\n			src="https://cdn.counter.dev/script.js"\n			data-id="577cfaaf-19ed-4ba3-9a0d-62e8ddcebda3"\n			data-utcoffset="2"\n		><\/script>\n		<div id="svelte-root">' + body + "</div>\n	</body>\n</html>\n",
+    app: ({ head, body, assets: assets2, nonce, env }) => '<!DOCTYPE html>\n<html lang="en">\n\n<head>\n	<meta charset="utf-8" />\n\n	<!-- Favicon -->\n	<link rel="manifest" href="' + assets2 + '/favicons/site.webmanifest" />\n	<link rel="icon" href="' + assets2 + '/favicons/icon48.png" />\n\n	<!-- Tell browser this site is responsive -->\n	<meta name="viewport" content="width=device-width, initial-scale=1" />\n	<!-- Tell browser this site supports only dark mode -->\n	<meta name="color-scheme" content="dark" />\n	<!-- Color for browser url bar in mobile/Safari -->\n	<meta name="theme-color" content="#f500ff" />\n	<!-- Disable Google FLOC -->\n	<meta http-equiv="Permissions-Policy" content="interest-cohort=()" />\n\n	' + head + '\n</head>\n\n<body data-sveltekit-preload-data="hover">\n	<script src="https://cdn.counter.dev/script.js" data-id="577cfaaf-19ed-4ba3-9a0d-62e8ddcebda3"\n		data-utcoffset="2"><\/script>\n	<div id="svelte-root">' + body + "</div>\n</body>\n\n</html>\n",
     error: ({ status, message }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -195,7 +195,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "s2fzq0"
+  version_hash: "1bt4hqq"
 };
 function get_hooks() {
   return {};
