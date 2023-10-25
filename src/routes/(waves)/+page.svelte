@@ -6,6 +6,7 @@
 	import type { FeatureType, BlogPostType, SocialProofType } from '$lib/utils/types';
 	import SocialProofSection from '$lib/components/organisms/SocialProofSection.svelte';
 	import NewsletterSection from '$lib/components/organisms/NewsletterSection.svelte';
+	import Badges from '$lib/components/organisms/Badges.svelte';
 
 	export let data: {
 		features: FeatureType[];
@@ -19,6 +20,7 @@
 <div class="container">
 	<Hero />
 	<About />
+	<!-- <Badges /> -->
 	<NewsletterSection />
 	<Features {features} />
 	{#if posts && posts.length > 0}

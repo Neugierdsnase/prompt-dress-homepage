@@ -6,7 +6,7 @@
 	import Error from '$lib/icons/error.svelte';
 </script>
 
-<Header showBackground />
+<Header />
 
 <main>
 	<div class="error-page">
@@ -25,6 +25,10 @@
 <Footer />
 
 <style lang="scss">
+	main {
+		min-height: 85vh;
+	}
+
 	.error-page {
 		background: var(--color--page-background);
 		position: relative;

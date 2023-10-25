@@ -27,9 +27,10 @@
 
 <style lang="scss">
 	footer {
+		height: 15vh;
 		position: relative;
 		z-index: 1;
-		padding: 30px;
+		padding: 20px;
 		width: 100%;
 		display: flex;
 		flex-direction: column;

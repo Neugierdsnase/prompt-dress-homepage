@@ -1,15 +1,7 @@
 <script lang="ts">
-	import DownloadIcon from '$lib/icons/download.svelte';
-	import Button from '$lib/components/atoms/Button.svelte';
-	import { detect } from 'detect-browser';
-	import ExternalLink from '$lib/icons/external-link.svelte';
+	import Downloads from '$lib/components/molecules/Downloads.svelte';
 
 	const clamp = (num: number, min: number, max: number) => Math.min(Math.max(num, min), max);
-	const browser = detect();
-
-	const isChrome = browser?.name === 'chrome';
-	const isFirefox = browser?.name === 'firefox';
-	const isEdge = browser?.name === 'edge';
 
 	let offsetY = 0;
 	let scale = 1;
@@ -36,30 +28,7 @@
 			<span class="highlight">joy.</span></span
 		>
 	</p>
-	<div class="ctas">
-		{#if isChrome}
-			<Button href="https://bit.ly/website-chrome-web-store">
-				<DownloadIcon slot="icon" />
-				Download for Chrome
-			</Button>
-		{/if}
-		{#if isFirefox}
-			<Button href="/firefox-coming-soon">
-				<DownloadIcon slot="icon" />
-				It's coming soon for Firefox, stay tuned!
-			</Button>
-		{/if}
-		{#if isEdge}
-			<Button href="https://bit.ly/website-chrome-web-store">
-				<DownloadIcon slot="icon" />
-				Download for Edge
-			</Button>
-		{/if}
-		<Button href="/download-extension">
-			<ExternalLink slot="icon" />
-			See all download options
-		</Button>
-	</div>
+	<Downloads showOnlyUsedBrowser />
 </section>
 
 <style lang="scss">
@@ -96,15 +65,6 @@
 			@include for-phone-only {
 				display: none;
 			}
-		}
-
-		.ctas {
-			display: flex;
-			flex-wrap: wrap;
-			align-items: center;
-			justify-content: center;
-			gap: 10px;
-			width: 100%;
 		}
 	}
 </style>

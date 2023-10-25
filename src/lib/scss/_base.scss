@@ -1,5 +1,9 @@
 // Styles that are used everywhere
 
+body {
+	overflow-x: hidden;
+}
+
 .container {
 	@include padded-container;
 }

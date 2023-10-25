@@ -26,6 +26,9 @@
 		"src/routes/(blog-article)/+layout.server.ts",
 		"src/routes/+layout.ts"
 	],
+	"/(waves)/download-extension": [
+		"src/routes/+layout.ts"
+	],
 	"/(waves)/privacy-policy": [
 		"src/routes/+layout.ts"
 	],

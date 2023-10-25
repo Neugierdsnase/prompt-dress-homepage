@@ -36,14 +36,18 @@
 		</div>
 	</nav>
 </header>
+<div class="razor cyber-razor-bottom" style="opacity: {bgOpacity}" />
 
 <style lang="scss">
 	@import '$lib/scss/breakpoints.scss';
 
 	header {
 		position: sticky;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		top: 0;
-		padding: 30px 0;
+		height: 80px;
 		z-index: 1000;
 
 		@include for-phone-only {
@@ -58,6 +62,10 @@
 			justify-content: space-between;
 			align-items: center;
 			gap: 30px;
+		}
+
+		nav {
+			padding-top: 15px;
 		}
 
 		.logo {
@@ -83,6 +91,17 @@
 			color: var(--color--text);
 			text-decoration: none;
 			line-height: 1.5;
+		}
+	}
+
+	.razor {
+		position: sticky;
+		top: 80px;
+		z-index: 1000;
+		&::after {
+			width: 170%;
+			transform: translateX(-30%);
+			background-color: var(--color--card-background);
 		}
 	}
 </style>

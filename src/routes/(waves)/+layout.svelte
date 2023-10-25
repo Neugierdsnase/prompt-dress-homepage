@@ -30,3 +30,9 @@
 </main>
 
 <Footer />
+
+<style lang="scss">
+	main {
+		min-height: 85vh;
+	}
+</style>
