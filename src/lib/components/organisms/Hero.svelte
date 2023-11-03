@@ -6,9 +6,10 @@
 	let offsetY = 0;
 	let scale = 1;
 	let opacity = 1;
+	let scrollY = 0;
 
 	const handleScroll = () => {
-		let scrollY = window.scrollY;
+		scrollY = window.scrollY;
 		opacity = scrollY > 76 ? 0 : 1;
 
 		offsetY = clamp(-1110, -(scrollY + 1) * 1.05, 0);
@@ -18,21 +19,30 @@
 
 <svelte:window on:scroll={handleScroll} />
 
-<section id="hero">
-	<h1 class="hello" style="transform: translateY({offsetY}px) scale({scale}); opacity: {opacity}">
-		Prompt Dress
-	</h1>
-	<p class="intro">
-		<span class="center"
-			>Organize your AI prompts<br />with <span class="highlight">ease</span> and
-			<span class="highlight">joy.</span></span
-		>
-	</p>
-	<Downloads showOnlyUsedBrowser />
-</section>
+<div class="section-container" style="background-position: center {scrollY}px">
+	<section id="hero">
+		<h1 class="hello" style="transform: translateY({offsetY}px) scale({scale}); opacity: {opacity}">
+			Prompt Dress
+		</h1>
+		<p class="intro">
+			<span class="center"
+				>Organize your AI prompts<br />with <span class="highlight">ease</span> and
+				<span class="highlight">joy.</span></span
+			>
+		</p>
+		<Downloads showOnlyUsedBrowser />
+	</section>
+</div>
 
 <style lang="scss">
 	@import '$lib/scss/breakpoints.scss';
+
+	.section-container {
+		background: url(/images/cyberpunk/pattern2.png);
+		background-attachment: fixed;
+		padding: 0 100vw;
+		margin: 0 -100vw;
+	}
 
 	#hero {
 		display: flex;

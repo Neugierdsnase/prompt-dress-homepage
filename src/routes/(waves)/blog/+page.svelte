@@ -11,6 +11,15 @@
 </script>
 
 <div class="container">
+	<div>
+		I am slowly deprecating this blog. Please check out the relevant content I produce on <a
+			href="https://medium.com/@k8603427"
+			rel="noreferrer noopener">Medium</a
+		>, <a href="https://promptdress.substack.com/" rel="noreferrer noopener">Substack</a> or
+		<a href="https://www.youtube.com/channel/UCgE_-5ZfUR_UruSn1XrpXtw" rel="noreferrer noopener"
+			>YouTube.</a
+		>
+	</div>
 	<ContentSection title="All Blog Posts">
 		<div class="grid">
 			{#each posts as post}

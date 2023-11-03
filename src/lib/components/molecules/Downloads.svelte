@@ -21,9 +21,9 @@
 		</Button>
 	{/if}
 	{#if isFirefox || !showOnlyUsedBrowser}
-		<Button href="/firefox-coming-soon">
+		<Button href="https://addons.mozilla.org/en-US/firefox/addon/prompt-dress/">
 			<DownloadIcon slot="icon" />
-			It's coming soon for Firefox, stay tuned!
+			Download for Firefox
 		</Button>
 	{/if}
 	{#if isEdge || !showOnlyUsedBrowser}

@@ -29,6 +29,7 @@
 	footer {
 		height: 15vh;
 		position: relative;
+		bottom: 0;
 		z-index: 1;
 		padding: 20px;
 		width: 100%;
